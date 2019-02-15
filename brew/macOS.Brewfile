@@ -29,6 +29,7 @@ brew "yarn"
 # cask
 ############################################################################
 cask "1password"
+cask "bittorrent-sync"
 cask "dropbox"
 cask "firefox"
 cask "google-chrome"

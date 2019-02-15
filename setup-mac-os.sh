@@ -63,7 +63,8 @@ url=https://raw.githubusercontent.com/lifekaizen/mac-init/master/installers/home
 }
 
 function install_packages_with_brewfile() {
-    BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
+    # BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
+    BREW_FILE_PATH="${REPO}/brew/debug.Brewfile"    #debug
     info "Installing packages within ${BREW_FILE_PATH}"
     if brew bundle check --file="$BREW_FILE_PATH" &> /dev/null; then
         success "Brewfile's dependencies are already satisfied "
