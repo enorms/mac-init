@@ -1,5 +1,8 @@
 #sh for syntax highlighting in Code
 
+#something failed to install and caused a stop in the process
+# unknown dev signed by tomihiko fukiyama?
+
 #########################################
 # Why did node fail???
 ==> Upgrading 1 outdated package:
