@@ -1,13 +1,6 @@
 # "¬" charachter tells osascript that the line continues
 set login_item_list to {¬
-    "Alfred 3",¬
-    "Bartender 3",¬
-    "Docker",¬
     "Dropbox",¬
-    "Hammerspoon",¬
-    "Numi",¬
-    "Spectacle",¬
-    "iTerm"¬
 }
 
 tell application "System Events" to delete every login item

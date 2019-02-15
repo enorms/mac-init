@@ -19,7 +19,71 @@ Execute `bootstrap` function freely which in turn executes the bootstrapping scr
 
 ## TODO
 store basic dotfiles
+
 choose brew and cask install applications and dev environments
+
+###brew packages:
+autoconf
+automake
+cloudfoundry/tap/cf-cli
+cmake
+gcc
+gdbm
+gmp	
+gnutls
+hwloc
+icu4c
+isl
+libffi
+libgcrypt
+libgpg-error
+libimobiledevice
+libmicrohttpd
+libmpc
+libplist
+libtasn1
+libtool
+libunistring
+libusb
+libxml2
+libzip
+mongodb	// optional
+mpfr
+nettle
+openssl
+p11-kit
+pcre
+pkg-config
+python
+python@2
+readline
+sphinx-doc
+sqlite
+usbmuxd
+xz	// unknown
+
+
+#### react-native:
+watchman
+yarn
+ideviceinstaller
+ios-deploy
+node
+
+#### flutter:
+dart
+
+#### docker:
+docker
+kubernetes-cli
+kubernetes-helm
+
+###cask apps:
+
+* android-platform-tools	//adb
+* macdown
+
+When complete, the above should show in `brew cask list`.
 
 ## Reference
 

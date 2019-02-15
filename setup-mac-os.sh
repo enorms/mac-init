@@ -5,33 +5,33 @@ main() {
     ask_for_sudo
     # Installing Homebrew, the basis of anything and everything
     install_homebrew
-    # Cloning Dotfiles repository for install_packages_with_brewfile to have access to Brewfile
-    clone_dotfiles_repo
-    # Installing all packages in Dotfiles repository's Brewfile
+
+    # Cloning repository for install_packages_with_brewfile to have access to Brewfile
+    clone_repo
+    # Installing all packages in repository's Brewfile
     install_packages_with_brewfile
+
     # Remove quarantine from casks downloaded by brew
     remove_quarantine
+
     # Changing default shell to Fish
-    change_shell_to_fish
+#    change_shell_to_fish
+
     # Installing pip packages so that setup_symlinks can setup the symlinks
-    install_pip_packages
+    # install_pip_packages
     # Installing yarn packages
-    install_yarn_packages
+    # install_yarn_packages
     # Setting up symlinks so that setup_vim can install all plugins
-    setup_symlinks
-    # Setting up Vim
-    setup_vim
-    # Setting up tmux
-    setup_tmux
+    # setup_symlinks
     # Update /etc/hosts
-    update_hosts_file
+    # update_hosts_file
     # Setting up macOS defaults
-    setup_macOS_defaults
+    # setup_macOS_defaults
     # Updating login items
-    update_login_items
+    # update_login_items
 }
 
-DOTFILES_REPO=~/personal/dotfiles
+REPO=~/personal/mac-init
 
 function ask_for_sudo() {
     info "Prompting for sudo password"
@@ -51,7 +51,7 @@ function install_homebrew() {
     if hash brew 2>/dev/null; then
         success "Homebrew already exists"
     else
-url=https://raw.githubusercontent.com/Sajjadhosn/dotfiles/master/installers/homebrew_installer
+url=https://raw.githubusercontent.com/lifekaizen/mac-init/master/installers/homebrew_installer
         if /usr/bin/ruby -e "$(curl -fsSL ${url})"; then
             success "Homebrew installation succeeded"
         else
@@ -62,7 +62,7 @@ url=https://raw.githubusercontent.com/Sajjadhosn/dotfiles/master/installers/home
 }
 
 function install_packages_with_brewfile() {
-    BREW_FILE_PATH="${DOTFILES_REPO}/brew/macOS.Brewfile"
+    BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
     info "Installing packages within ${BREW_FILE_PATH}"
     if brew bundle check --file="$BREW_FILE_PATH" &> /dev/null; then
         success "Brewfile's dependencies are already satisfied "
@@ -160,17 +160,17 @@ function install_yarn_packages() {
     success "yarn packages successfully installed"
 }
 
-function clone_dotfiles_repo() {
-    info "Cloning dotfiles repository into ${DOTFILES_REPO}"
-    if test -e $DOTFILES_REPO; then
-        substep "${DOTFILES_REPO} already exists"
-        pull_latest $DOTFILES_REPO
-        success "Pull successful in ${DOTFILES_REPO} repository"
+function clone_repo() {
+    info "Cloning dotfiles repository into ${REPO}"
+    if test -e $REPO; then
+        substep "${REPO} already exists"
+        pull_latest $REPO
+        success "Pull successful in ${REPO} repository"
     else
-        url=https://github.com/Sajjadhosn/dotfiles.git
-        if git clone "$url" $DOTFILES_REPO && \
-           git remote set-url origin git@github.com:Sajjadhosn/dotfiles.git; then
-            success "Dotfiles repository cloned into ${DOTFILES_REPO}"
+        url=https://github.com/lifekaizen/mac-init.git
+        if git clone "$url" $REPO && \
+           git remote set-url origin git@github.com:lifekaizen/mac-init.git; then
+            success "Dotfiles repository cloned into ${REPO}"
         else
             error "Dotfiles repository cloning failed"
             exit 1
@@ -249,21 +249,21 @@ function setup_symlinks() {
     POWERLINE_ROOT_REPO=/usr/local/lib/python3.7/site-packages
 
     info "Setting up symlinks"
-    symlink "git" ${DOTFILES_REPO}/git/gitconfig ~/.gitconfig
-    symlink "hammerspoon" ${DOTFILES_REPO}/hammerspoon ~/.hammerspoon
-    symlink "iterm2" ${DOTFILES_REPO}/iTerm2/iterm_startup_script.scpt "${APPLICATION_SUPPORT}"/iTerm2/Scripts/AutoLaunch.scpt
-    symlink "karabiner" ${DOTFILES_REPO}/karabiner ~/.config/karabiner
-    symlink "powerline" ${DOTFILES_REPO}/powerline ${POWERLINE_ROOT_REPO}/powerline/config_files
-    symlink "tmux" ${DOTFILES_REPO}/tmux/tmux.conf ~/.tmux.conf
-    symlink "vim" ${DOTFILES_REPO}/vim/vimrc ~/.vimrc
+    symlink "git" ${REPO}/git/gitconfig ~/.gitconfig
+    symlink "hammerspoon" ${REPO}/hammerspoon ~/.hammerspoon
+    symlink "iterm2" ${REPO}/iTerm2/iterm_startup_script.scpt "${APPLICATION_SUPPORT}"/iTerm2/Scripts/AutoLaunch.scpt
+    symlink "karabiner" ${REPO}/karabiner ~/.config/karabiner
+    symlink "powerline" ${REPO}/powerline ${POWERLINE_ROOT_REPO}/powerline/config_files
+    symlink "tmux" ${REPO}/tmux/tmux.conf ~/.tmux.conf
+    symlink "vim" ${REPO}/vim/vimrc ~/.vimrc
 
     # Disable shell login message
     symlink "hushlogin" /dev/null ~/.hushlogin
 
-    symlink "fish:completions" ${DOTFILES_REPO}/fish/completions ~/.config/fish/completions
-    symlink "fish:functions"   ${DOTFILES_REPO}/fish/functions   ~/.config/fish/functions
-    symlink "fish:config.fish" ${DOTFILES_REPO}/fish/config.fish ~/.config/fish/config.fish
-    symlink "fish:oh_my_fish"  ${DOTFILES_REPO}/fish/oh_my_fish  ~/.config/omf
+    symlink "fish:completions" ${REPO}/fish/completions ~/.config/fish/completions
+    symlink "fish:functions"   ${REPO}/fish/functions   ~/.config/fish/functions
+    symlink "fish:config.fish" ${REPO}/fish/config.fish ~/.config/fish/config.fish
+    symlink "fish:oh_my_fish"  ${REPO}/fish/oh_my_fish  ~/.config/omf
 
     success "Symlinks successfully setup"
 }
@@ -288,8 +288,8 @@ function symlink() {
 
 function update_hosts_file() {
     info "Updating /etc/hosts"
-    own_hosts_file_path=${DOTFILES_REPO}/hosts/own_hosts_file
-    ignored_keywords_path=${DOTFILES_REPO}/hosts/ignored_keywords
+    own_hosts_file_path=${REPO}/hosts/own_hosts_file
+    ignored_keywords_path=${REPO}/hosts/ignored_keywords
     downloaded_hosts_file_path=/etc/downloaded_hosts_file
     downloaded_updated_hosts_file_path=/etc/downloaded_updated_hosts_file
 
@@ -330,7 +330,7 @@ function setup_macOS_defaults() {
     info "Updating macOS defaults"
 
     current_dir=$(pwd)
-    cd ${DOTFILES_REPO}/macOS
+    cd ${REPO}/macOS
     if bash defaults.sh; then
         cd $current_dir
         success "macOS defaults updated successfully"
@@ -344,7 +344,7 @@ function setup_macOS_defaults() {
 function update_login_items() {
     info "Updating login items"
 
-    if osascript ${DOTFILES_REPO}/macOS/login_items.applescript &> /dev/null; then
+    if osascript ${REPO}/macOS/login_items.applescript &> /dev/null; then
         success "Login items updated successfully "
     else
         error "Login items update failed"
