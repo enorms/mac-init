@@ -9,6 +9,7 @@ main() {
     # Cloning repository for install_packages_with_brewfile to have access to Brewfile
     clone_repo
     # Installing all packages in repository's Brewfile
+    # I believe this makes it easier to specify overall things and avoid manual entry stoppages.
     install_packages_with_brewfile
 
     # Remove quarantine from casks downloaded by brew
@@ -31,7 +32,7 @@ main() {
     # update_login_items
 }
 
-REPO=~/personal/mac-init
+REPO=/Users/Eric/dev_temp/mac-init
 
 function ask_for_sudo() {
     info "Prompting for sudo password"
