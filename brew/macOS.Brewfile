@@ -16,11 +16,9 @@ tap "homebrew/core"
 #powerful shell
 brew "fish" 
 # for linting Python files
-brew "flake8"
+# brew "flake8"  #lint checks for style consistency # http://flake8.pycqa.org/en/latest/manpage.html
 brew "git"
-brew "git-open"
-brew "git-redate"
-brew "node" #failed
+brew "node"
 brew "python"
 brew "python@2"
 # better npm from fb
@@ -32,19 +30,19 @@ brew "mas"
 ### cask
 cask "1password"
 cask "resilio-sync" #fast local sync (wifi)
-cask "dropbox"  #failed!
+cask "dropbox"
 cask "firefox"
-cask "google-chrome"    #failed!
+cask "google-chrome"
 cask "google-cloud-sdk"
 # Better calc
 #cask "iterm2"
 cask "karabiner-elements"
 #cask "microsoft-office"
-cask "nordvpn"
+#cask "nordvpn"
 #cask "numi"
 #cask "spotify"
-cask "sublime-text" # failed
+cask "sublime-text"
 # Remote access
 #cask "teamviewer"  # this may have cursor?
 # For compression types such as rar
-cask "the-unarchiver"
+# cask "the-unarchiver" # failing
