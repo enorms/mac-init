@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+### Set variables
+
+# failed on first try with: REPO=~/github/mac-init
+REPO=~/github/mac-init
+# TODO: try adding mac-init.git
+
+BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
+# BREW_FILE_PATH="${REPO}/brew/debug.Brewfile"    #debug
+
+
+### Define functions
+
 main() {
     # First things first, asking for sudo credentials
     ask_for_sudo
@@ -36,7 +48,6 @@ main() {
     update_login_items
 }
 
-REPO=/Users/Eric/dev_temp/mac-init
 
 function ask_for_sudo() {
     info "Prompting for sudo password"
@@ -67,8 +78,6 @@ url=https://raw.githubusercontent.com/lifekaizen/mac-init/master/installers/home
 }
 
 function install_packages_with_brewfile() {
-    BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
-    # BREW_FILE_PATH="${REPO}/brew/debug.Brewfile"    #debug
     info "Installing packages within ${BREW_FILE_PATH}"
     if brew bundle check --file="$BREW_FILE_PATH" &> /dev/null; then
         success "Brewfile's dependencies are already satisfied "
@@ -395,5 +404,8 @@ function success() {
 function error() {
     coloredEcho "$1" red "========>"
 }
+
+
+### Execute program
 
 main "$@"
