@@ -38,7 +38,6 @@ cask "google-cloud-sdk"
 #cask "iterm2"
 cask "karabiner-elements"
 #cask "microsoft-office"
-cask "expressvpn"
 #cask "numi"
 #cask "spotify"
 cask "sublime-text"
@@ -46,3 +45,6 @@ cask "sublime-text"
 #cask "teamviewer"  # this may have cursor?
 # For compression types such as rar
 # cask "the-unarchiver" # failing
+
+# todo: create cask for express vpn, see:
+# https://github.com/Homebrew/homebrew-cask/blob/master/Casks/expressvpn.rb
