@@ -25,7 +25,11 @@ main() {
     # Setting up symlinks so that setup_vim can install all plugins
     setup_symlinks
     # Update /etc/hosts
-    update_hosts_file
+    # update_hosts_file # fails
+        # ==== Copying /Users/Eric/dev_temp/mac-init/hosts/own_hosts_file to /etc/hosts succeeded
+        # sudo: wget: command not found
+        # ========> Failed to download hosts file
+    
     # Setting up macOS defaults
     setup_macOS_defaults
     # Updating login items
