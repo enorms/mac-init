@@ -15,21 +15,21 @@ main() {
     # Remove quarantine from casks downloaded by brew
     remove_quarantine
 
-    # Changing default shell to Fish
-#    change_shell_to_fish
+    ## Changing default shell to Fish
+    # change_shell_to_fish
 
-    # Installing pip packages so that setup_symlinks can setup the symlinks
-    # install_pip_packages
-    # Installing yarn packages
-    # install_yarn_packages
+    # Install pip packages so that setup_symlinks can setup the symlinks
+    install_pip_packages
+    # Install yarn packages
+    install_yarn_packages
     # Setting up symlinks so that setup_vim can install all plugins
-    # setup_symlinks
+    setup_symlinks
     # Update /etc/hosts
-    # update_hosts_file
+    update_hosts_file
     # Setting up macOS defaults
-    # setup_macOS_defaults
+    setup_macOS_defaults
     # Updating login items
-    # update_login_items
+    update_login_items
 }
 
 REPO=/Users/Eric/dev_temp/mac-init
