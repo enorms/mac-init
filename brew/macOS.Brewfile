@@ -23,7 +23,7 @@ brew "flake8"
 
 ### cask
 cask "1password"
-cask "resilio-sync" #fast local sync (wifi)
+#cask "resilio-sync" #fast local sync (wifi)  #dropbox has lan now
 cask "dropbox"
 cask "firefox"
 cask "google-chrome"
