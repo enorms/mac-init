@@ -1,3 +1,8 @@
+### eric norman 2019
+###
+### to run locally: brew bundle --file=[path]
+### to remov anything not here, run brew bundle cleanup --force --file=[path]
+
 ### env
 tap "homebrew/cask"
 tap "homebrew/core"
@@ -19,12 +24,19 @@ brew "git"
 brew "python"
 brew "python@2"
 
+# react-native
+# xcode cli already installed for homebrew (xcode-select)
 brew "node"
-brew "yarn"
+brew "watchman"
 brew "react-native-cli"
+
+# yarn is optional
+brew "yarn"
+
 
 # Tools
 cask "sublime-text"
+cask "macdown"
 cask "visual-studio-code"
 cask "android-studio"
 cask "google-cloud-sdk"
