@@ -133,6 +133,10 @@ function configure_finder() {
     
     ## Disable the warning before emptying the Trash
     # defaults write com.apple.finder WarnOnEmptyTrash -bool false
+    
+    # Always show scrollbars
+    defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+    # Possible values: `WhenScrolling`, `Automatic` and `Always`
 }
 
 function quit() {
