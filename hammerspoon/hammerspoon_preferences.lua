@@ -1,5 +1,0 @@
-hs.automaticallyCheckForUpdates(false)
-hs.dockicon.hide()
-hs.menuIcon(false)
-hs.consoleOnTop(false)
-hs.uploadCrashData(false)

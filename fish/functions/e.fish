@@ -1,3 +1,0 @@
-function e
-    exit
-end
