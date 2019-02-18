@@ -16,6 +16,23 @@ curl --silent https://raw.githubusercontent.com/lifekaizen/mac-init/master/setup
 
 Execute `bootstrap` function freely which in turn executes the bootstrapping script.
 
+## Modifications after install
+
+### To remove unneeded applications
+
+If installed via brew, use brew bundle uninstall, like this:
+`brew bundle cleanup --force --file=[path]`
+
+Example:
+```
+erics-MacBook-Pro:mac-init eric$ brew bundle cleanup --force --file=/Users/eric/github/mac-init/brew/macOS.Brewfile
+==> Uninstalling Cask resilio-sync
+==> Backing App 'Resilio Sync.app' up to '/usr/local/Caskroom/resilio-sync/2.6.3/Resilio Sync.app'.
+==> Removing App '/Applications/Resilio Sync.app'.
+==> Purging files for version 2.6.3 of Cask resilio-sync
+Uninstalled 1 cask
+Pruned 1 symbolic links and 2 directories from /usr/local
+```
 
 ## TODO
 store basic dotfiles
