@@ -4,7 +4,7 @@
 
 # failed on first try with: REPO=~/github/mac-init
 # TODO: try adding mac-init.git
-REPO=~/github/mac-init/mac-init.git
+REPO=~/github/mac-init/
 
 BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
 # BREW_FILE_PATH="${REPO}/brew/debug.Brewfile"    #debug
