@@ -1,7 +1,8 @@
 ### eric norman 2019
 ###
 ### to run locally: brew bundle --file=[path]
-### to remov anything not here, run brew bundle cleanup --force --file=[path]
+### to remove anything not here, run brew bundle cleanup --force --file=[path]
+# $ brew bundle cleanup --force --file=/Users/eric/github/mac-init/brew/macOS.Brewfile
 
 ### env
 tap "homebrew/cask"
@@ -10,11 +11,12 @@ tap "dart-lang/dart"
 brew "mas"  
 
 ### basic tools
-cask "1password"
+# cask "1password"	#this is v7; have license for v6
 cask "dropbox"
 cask "firefox"
 cask "google-chrome"
 mas "Slack", id: 803453959
+cask "nordvpn"
 
 
 ### cs
