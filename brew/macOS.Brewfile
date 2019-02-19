@@ -14,6 +14,7 @@ cask "1password"
 cask "dropbox"
 cask "firefox"
 cask "google-chrome"
+mas "Slack", id: 803453959
 
 
 ### cs
