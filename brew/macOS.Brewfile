@@ -19,6 +19,7 @@ cask "firefox"
 cask "google-chrome"
 mas "Slack", id: 803453959
 cask "nordvpn"
+mas "Numbers", id:409203825
 
 
 ### mobile
@@ -49,6 +50,7 @@ cask "visual-studio-code"
 cask "android-studio"
 cask "google-cloud-sdk"
 mas "Xcode", id: 497799835
+cask "sourcetree"
 
 # Tweaks
 # Python lint checks for style consistency # http://flake8.pycqa.org/en/latest/manpage.html
