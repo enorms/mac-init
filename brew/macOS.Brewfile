@@ -1,51 +1,56 @@
+
 ### eric norman 2019
 ###
 ### to run locally: brew bundle --file=[path]
-### to remov anything not here, run brew bundle cleanup --force --file=[path]
+### to remove anything not here, run brew bundle cleanup --force --file=[path]
+# $ brew bundle cleanup --force --file=/Users/eric/github/mac-init/brew/macOS.Brewfile
+
 
 ### env
 tap "homebrew/cask"
 tap "homebrew/core"
 brew "mas"  
 
+
 ### basic tools
-cask "1password"
+# cask "1password"	#this is v7; have license for v6
 cask "dropbox"
 cask "firefox"
 cask "google-chrome"
+mas "Slack", id: 803453959
+cask "nordvpn"
+mas "Numbers", id:409203825
+
+
+### mobile
+cask "tripmode"
 
 
 ### cs
-# Frameworks
+## Frameworks
 brew "git"
 
-## Languages
-# python
-brew "python"
-brew "python@2"
-#pip3 pylint # for Visual Studio
-
-
-
-# react-native
-# xcode cli already installed for homebrew (xcode-select)
-brew "node"
-brew "watchman"
-brew "react-native-cli"
-
-# yarn is optional
-brew "yarn"
-
-# dart is optional (~300 MB)
-brew "dart"
-
-# Tools
+## Tools
 cask "sublime-text"
 cask "macdown"
 cask "visual-studio-code"
 cask "android-studio"
 cask "google-cloud-sdk"
 mas "Xcode", id: 497799835
+cask "sourcetree"
+
+## Languages
+brew "python"
+brew "python@2"
+#pip3 pylint # for Visual Studio
+# xcode cli already installed for homebrew (xcode-select)
+brew "node"
+brew "watchman"
+brew "react-native-cli"
+brew "yarn"
+brew "dart"
+
+
 
 #python packages to pip: pandas, matplotlib, numpy
 
