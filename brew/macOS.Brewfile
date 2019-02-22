@@ -17,18 +17,21 @@ brew "mas"
 cask "dropbox"
 cask "firefox"
 cask "google-chrome"
-mas "Slack", id: 803453959
 cask "nordvpn"
-mas "Numbers", id:409203825
+mas "Slack", id: 803453959
+mas "Numbers", id:409203825	#By: Apple Inc.
+mas "Pages", id:409201541	#By: Apple Inc.
 
 
 ### mobile
 cask "tripmode"
 
 
+
 ### cs
 ## Frameworks
 brew "git"
+
 
 ## Tools
 cask "sublime-text"
@@ -42,6 +45,7 @@ cask "sourcetree"
 ## Languages
 brew "python"
 brew "python@2"
+cask "anaconda"	#for iPython
 #pip3 pylint # for Visual Studio
 # xcode cli already installed for homebrew (xcode-select)
 brew "node"
