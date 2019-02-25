@@ -34,6 +34,12 @@ Uninstalled 1 cask
 Pruned 1 symbolic links and 2 directories from /usr/local
 ```
 
+## Usage notes
+
+* Anaconda
+To run:
+`source /usr/local/anaconda3/bin/activate`
+
 ## TODO
 store basic dotfiles
 
