@@ -251,11 +251,11 @@ function update_hosts_file() {
 }
 
 function setup_macOS_defaults() {
-    info "Updating macOS defaults"
+    info "Updating macOS preferences"
 
     current_dir=$(pwd)
     cd ${REPO}/macOS
-    if bash defaults.sh; then
+    if bash macos.sh; then
         cd $current_dir
         success "macOS defaults updated successfully"
     else

@@ -4,9 +4,7 @@
 main() {
 
 #    configure_plist_apps
-    configure_system
-    configure_dock
-    configure_finder
+    configure_mac
 }
 
 function configure_plist_apps() {
@@ -15,10 +13,21 @@ function configure_plist_apps() {
     return
 }
 
-function configure_system() {
+function configure_mac() {
+
+    # Close any open System Preferences panes, to prevent them from overriding
+    # settings we’re about to change
+    osascript -e 'tell application "System Preferences" to quit'
 
     ## Disable Gatekeeper for getting rid of unknown developers error
     sudo spctl --master-disable
+
+    # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+###############################################################################
+# General UI/UX                                                               #
+###############################################################################
 
     ## Enable tap to click
     defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
@@ -29,9 +38,6 @@ function configure_system() {
 
     ## Disable "Correct spelling automatically"
      defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
-}
-
-function configure_dock() {
 
     quit "Dock"
 
@@ -88,9 +94,7 @@ function configure_dock() {
     defaults write com.apple.dock wvous-bl-modifier -int 0
 
     open "Dock"
-}
 
-function configure_finder() {
 
     ## Save screenshots to Downloads folder
 #    defaults write com.apple.screencapture location -string "${HOME}/Downloads"
@@ -155,6 +159,8 @@ function configure_finder() {
     
     # Restart automatically if the computer freezes
     sudo systemsetup -setrestartfreeze on
+
+
 
 }
 
