@@ -20,6 +20,7 @@ cask "google-chrome"
 mas "Slack", id: 803453959
 cask "nordvpn"
 mas "Numbers", id:409203825
+cask "sizeup"
 
 
 ### mobile

@@ -13,38 +13,42 @@ BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
 ### Define functions
 
 main() {
-    # First things first, asking for sudo credentials
+
+    # First things first, get master password
     ask_for_sudo
-    # Installing Homebrew, the basis of anything and everything
+
+    # Install Homebrew
     install_homebrew
 
     # Cloning repository for install_packages_with_brewfile to have access to Brewfile
     clone_repo
-    # Installing all packages in repository's Brewfile
-    # I believe this makes it easier to specify overall things and avoid manual entry stoppages.
+
+    # Install 'brew', 'cask', and 'mas' packages
     install_packages_with_brewfile
 
     # Remove quarantine from casks downloaded by brew
     remove_quarantine
 
-    ## Changing default shell to Fish
-    # change_shell_to_fish
+    # Install pip3 packages so that setup_symlinks can setup the symlinks
+    install_pip3_packages
 
-    # Install pip packages so that setup_symlinks can setup the symlinks
-    install_pip_packages
-    # Install yarn packages
-    install_yarn_packages
+    # Install yarn packages; used for react-native
+#    install_yarn_packages
+
     # Setting up symlinks so that setup_vim can install all plugins
-    setup_symlinks
+    # NOT USING VIM OR POWERROOT
+#    setup_symlinks
+
     # Update /etc/hosts
     # update_hosts_file # fails
         # ==== Copying /Users/Eric/dev_temp/mac-init/hosts/own_hosts_file to /etc/hosts succeeded
         # sudo: wget: command not found
         # ========> Failed to download hosts file
     
-    # Setting up macOS defaults
+    # Set up macOS defaults
     setup_macOS_defaults
-    # Updating login items
+
+    # Update user Login Items
     update_login_items
 }
 
@@ -98,37 +102,9 @@ function remove_quarantine() {
     success "Quarantine attributes from applications in ${APPLICATIONS_PATH} successfully removed"
 }
 
-function change_shell_to_fish() {
-    info "Fish shell setup"
-    if grep --quiet fish <<< "$SHELL"; then
-        success "Fish shell already exists"
-    else
-        user=$(whoami)
-        substep "Adding Fish executable to /etc/shells"
-        if grep --fixed-strings --line-regexp --quiet \
-            "/usr/local/bin/fish" /etc/shells; then
-            substep "Fish executable already exists in /etc/shells"
-        else
-            if echo /usr/local/bin/fish | sudo tee -a /etc/shells > /dev/null;
-            then
-                substep "Fish executable successfully added to /etc/shells"
-            else
-                error "Failed to add Fish executable to /etc/shells"
-                exit 1
-            fi
-        fi
-        substep "Switching shell to Fish for \"${user}\""
-        if sudo chsh -s /usr/local/bin/fish "$user"; then
-            success "Fish shell successfully set for \"${user}\""
-        else
-            error "Please try setting Fish shell again"
-        fi
-    fi
-}
-
-function install_pip_packages() {
-    pip_packages=(powerline-status requests tmuxp virtualenv)
-    info "Installing pip packages \"${pip_packages[*]}\""
+function install_pip3_packages() {
+    pip3_packages=(anaconda numpy matplotlib pandas pylint rope virtualenv)
+    info "Installing pip packages \"${pip3_packages[*]}\""
 
     pip3_list_outcome=$(pip3 list)
     for package_to_install in "${pip_packages[@]}"
@@ -202,83 +178,16 @@ function pull_latest() {
     fi
 }
 
-function setup_vim() {
-    info "Setting up vim"
-    substep "Installing Vundle"
-    if test -e ~/.vim/bundle/Vundle.vim; then
-        substep "Vundle already exists"
-        pull_latest ~/.vim/bundle/Vundle.vim
-        substep "Pull successful in Vundle's repository"
-    else
-        url=https://github.com/VundleVim/Vundle.vim.git
-        if git clone "$url" ~/.vim/bundle/Vundle.vim; then
-            substep "Vundle installation succeeded"
-        else
-            error "Vundle installation failed"
-            exit 1
-        fi
-    fi
-    substep "Installing all plugins"
-    if vim +PluginInstall +qall 2> /dev/null; then
-        substep "Plugins installations succeeded"
-    else
-        error "Plugins installations failed"
-        exit 1
-    fi
-    success "vim successfully setup"
-}
-
-function setup_tmux() {
-    info "Setting up tmux"
-    substep "Installing tpm"
-    if test -e ~/.tmux/plugins/tpm; then
-        substep "tpm already exists"
-        pull_latest ~/.tmux/plugins/tpm
-        substep "Pull successful in tpm's repository"
-    else
-        url=https://github.com/tmux-plugins/tpm
-        if git clone "$url" ~/.tmux/plugins/tpm; then
-            substep "tpm installation succeeded"
-        else
-            error "tpm installation failed"
-            exit 1
-        fi
-    fi
-
-    substep "Installing all plugins"
-
-    # sourcing .tmux.conf is necessary for tpm
-    tmux source-file ~/.tmux.conf 2> /dev/null
-
-    if ~/.tmux/plugins/tpm/bin/./install_plugins &> /dev/null; then
-        substep "Plugins installations succeeded"
-    else
-        error "Plugins installations failed"
-        exit 1
-    fi
-    success "tmux successfully setup"
-}
-
 function setup_symlinks() {
     APPLICATION_SUPPORT=~/Library/Application\ Support
     POWERLINE_ROOT_REPO=/usr/local/lib/python3.7/site-packages
 
     info "Setting up symlinks"
     symlink "git" ${REPO}/git/gitconfig ~/.gitconfig
-    symlink "hammerspoon" ${REPO}/hammerspoon ~/.hammerspoon
-    symlink "iterm2" ${REPO}/iTerm2/iterm_startup_script.scpt "${APPLICATION_SUPPORT}"/iTerm2/Scripts/AutoLaunch.scpt
-    symlink "karabiner" ${REPO}/karabiner ~/.config/karabiner
-    symlink "powerline" ${REPO}/powerline ${POWERLINE_ROOT_REPO}/powerline/config_files
-    symlink "tmux" ${REPO}/tmux/tmux.conf ~/.tmux.conf
-    symlink "vim" ${REPO}/vim/vimrc ~/.vimrc
+#    symlink "hammerspoon" ${REPO}/hammerspoon ~/.hammerspoon
 
     # Disable shell login message
-    symlink "hushlogin" /dev/null ~/.hushlogin
-
-    symlink "fish:completions" ${REPO}/fish/completions ~/.config/fish/completions
-    symlink "fish:functions"   ${REPO}/fish/functions   ~/.config/fish/functions
-    symlink "fish:config.fish" ${REPO}/fish/config.fish ~/.config/fish/config.fish
-    symlink "fish:oh_my_fish"  ${REPO}/fish/oh_my_fish  ~/.config/omf
+#    symlink "hushlogin" /dev/null ~/.hushlogin
 
     success "Symlinks successfully setup"
 }
