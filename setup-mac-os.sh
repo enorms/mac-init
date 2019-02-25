@@ -4,7 +4,7 @@
 
 # failed on first try with: REPO=~/github/mac-init
 # TODO: try adding mac-init.git
-REPO=~/github/mac-init/mac-init.git
+REPO=~/github/mac-init/
 
 BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
 # BREW_FILE_PATH="${REPO}/brew/debug.Brewfile"    #debug
@@ -21,13 +21,13 @@ main() {
     install_homebrew
 
     # Cloning repository for install_packages_with_brewfile to have access to Brewfile
-    clone_repo
+#    clone_repo
 
     # Install 'brew', 'cask', and 'mas' packages
     install_packages_with_brewfile
 
     # Remove quarantine from casks downloaded by brew
-    remove_quarantine
+#    remove_quarantine
 
     # Install pip3 packages so that setup_symlinks can setup the symlinks
     install_pip3_packages
