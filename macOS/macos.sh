@@ -144,6 +144,12 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
 
+# running "Disable hibernation (speeds up entering sleep mode)"
+ sudo pmset -a hibernatemode 0
+
+#running "Disable the sudden motion sensor as it’s not useful for SSDs"
+ sudo pmset -a sms 0
+
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
