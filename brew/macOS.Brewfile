@@ -81,8 +81,9 @@ brew "react-native-cli"
 cask "android-platform-tools"
 
 
-# Java Development Kit, Oracle
-cask "java"
+# jdk 11 does not work, grab 8
+tap "caskroom/versions"
+cask "java8"
 
 # Flutter / Dart
 brew "dart"
