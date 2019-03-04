@@ -2,11 +2,11 @@
 
 ### Set variables
 
-# adb - for Android
+# adb - installed as part of cask "android-platform-tools"
 # anaconda - for iPython
 # for work - numpy matplotlib pandas
 # For MS VS Code: (lint, rename files) (pylint rope)
-pip3_packages=(adb anaconda numpy matplotlib pandas pylint rope virtualenv)
+pip3_packages=(anaconda numpy matplotlib pandas pylint rope virtualenv)
 
 # Installing typescript for YouCompleteMe and prettier for Neoformat to auto-format files
 # json for auto-formatting of json responses in terminal

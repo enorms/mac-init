@@ -70,10 +70,16 @@ brew "python@2"
 cask "anaconda"
 
 # For react-native
+# Package managers
 brew "node"
+brew "yarn"
+
 brew "watchman"
 brew "react-native-cli"
-brew "yarn"
+
+# Includes adb
+cask "android-platform-tools"
+
 
 # Java Development Kit, Oracle
 cask "java"
