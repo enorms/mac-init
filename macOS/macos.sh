@@ -341,6 +341,12 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
+# Add spacing to the left side of the Dock (where the applications are)
+defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+
+# Add spacing to the right side of the Dock (where the Trash is)
+defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
+
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
