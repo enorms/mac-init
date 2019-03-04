@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 
 ### Set variables
+
 # adb - for Android
 # anaconda - for iPython
 # for work - numpy matplotlib pandas
 # For MS VS Code: (lint, rename files) (pylint rope)
 pip3_packages=(adb anaconda numpy matplotlib pandas pylint rope virtualenv)
+
+# Installing typescript for YouCompleteMe and prettier for Neoformat to auto-format files
+# json for auto-formatting of json responses in terminal
+# vmd for previewing markdown files
+yarn_packages=(prettier typescript json vmd create-react-app @vue/cli)
 
 # failed on first try with: REPO=~/github/mac-init
 # TODO: try adding mac-init.git
@@ -108,7 +114,6 @@ function remove_quarantine() {
 }
 
 function install_pip3_packages() {
-
     info "Installing pip packages \"${pip3_packages[*]}\""
 
     pip3_list_outcome=$(pip3 list)
@@ -131,10 +136,6 @@ function install_pip3_packages() {
 }
 
 function install_yarn_packages() {
-    # Installing typescript for YouCompleteMe and prettier for Neoformat to auto-format files
-    # json for auto-formatting of json responses in terminal
-    # vmd for previewing markdown files
-    yarn_packages=(prettier typescript json vmd create-react-app @vue/cli)
     info "Installing yarn packages \"${yarn_packages[*]}\""
 
     yarn_list_outcome=$(yarn global list)
