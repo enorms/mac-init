@@ -75,4 +75,8 @@ brew "watchman"
 brew "react-native-cli"
 brew "yarn"
 
+# Java Development Kit, Oracle
+cask "java"
+
+# Flutter / Dart
 brew "dart"
