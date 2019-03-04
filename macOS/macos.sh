@@ -12,6 +12,47 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+##############################################################################
+# Security                                                                   #
+##############################################################################
+# More options here: https://github.com/atomantic/dotfiles/blob/master/install.sh
+# Based on:
+# https://github.com/drduh/macOS-Security-and-Privacy-Guide
+# https://benchmarks.cisecurity.org/tools2/osx/CIS_Apple_OSX_10.12_Benchmark_v1.0.0.pdf
+
+# Enable firewall. Possible values:
+#   0 = off
+#   1 = on for specific sevices
+#   2 = on for essential services
+sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+
+# Enable firewall stealth mode (no response to ICMP / ping requests)
+# Source: https://support.apple.com/kb/PH18642
+#sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
+sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
+
+# Do not automatically allow signed software to receive incoming connections
+#sudo defaults write /Library/Preferences/com.apple.alf allowsignedenabled -bool false
+
+# Turn Bluetooth off completely
+#sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0
+#sudo launchctl unload /System/Library/LaunchDaemons/com.apple.blued.plist
+#sudo launchctl load /System/Library/LaunchDaemons/com.apple.blued.plist
+
+# Disable wake-on modem
+sudo systemsetup -setwakeonmodem off
+
+# Disable wake-on LAN
+sudo systemsetup -setwakeonnetworkaccess off
+
+# Disable file-sharing via AFP or SMB
+# sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
+# sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.smbd.plist
+
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -51,9 +92,6 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-# Disable the “Are you sure you want to open this application?” dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
