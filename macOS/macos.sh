@@ -39,11 +39,8 @@ sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
 #sudo launchctl unload /System/Library/LaunchDaemons/com.apple.blued.plist
 #sudo launchctl load /System/Library/LaunchDaemons/com.apple.blued.plist
 
-# Disable wake-on modem
-sudo systemsetup -setwakeonmodem off
-
-# Disable wake-on LAN
-sudo systemsetup -setwakeonnetworkaccess off
+# Enable wake-on LAN
+sudo systemsetup -setwakeonnetworkaccess on
 
 # Disable file-sharing via AFP or SMB
 # sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
@@ -523,10 +520,10 @@ defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -boo
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
 
 # Disable auto-playing video
-#defaults write com.apple.Safari WebKitMediaPlaybackAllowsInline -bool false
-#defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
-#defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
-#defaults write com.apple.SafariTechnologyPreview com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
+defaults write com.apple.Safari WebKitMediaPlaybackAllowsInline -bool false
+defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
+defaults write com.apple.SafariTechnologyPreview com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
 
 # Enable “Do Not Track”
 defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
@@ -572,6 +569,7 @@ defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnab
 # 	MENU_WEBSEARCH             (send search queries to Apple)
 # 	MENU_OTHER
 defaults write com.apple.spotlight orderedItems -array \
+    '{"enabled" = 1;"name" = "CALCULATOR";}' \
 	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
 	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
 	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
@@ -588,10 +586,10 @@ defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
 	'{"enabled" = 1;"name" = "SPREADSHEETS";}' \
 	'{"enabled" = 1;"name" = "SOURCE";}' \
-	'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
-	'{"enabled" = 0;"name" = "MENU_OTHER";}' \
-	'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
-	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+	'{"enabled" = 1;"name" = "MENU_DEFINITION";}' \
+	'{"enabled" = 1;"name" = "MENU_OTHER";}' \
+	'{"enabled" = 1;"name" = "MENU_CONVERSION";}' \
+	'{"enabled" = 1;"name" = "MENU_EXPRESSION";}' \
 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 # Load new settings before rebuilding the index
@@ -734,8 +732,8 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ###############################################################################
 
 # Disable the all too sensitive backswipe on trackpads
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
+#defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+#defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 
 # Disable the all too sensitive backswipe on Magic Mouse
 defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
