@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
 ### Set variables
+# adb - for Android
+# anaconda - for iPython
+# for work - numpy matplotlib pandas
+# For MS VS Code: (lint, rename files) (pylint rope)
+pip3_packages=(adb anaconda numpy matplotlib pandas pylint rope virtualenv)
 
 # failed on first try with: REPO=~/github/mac-init
 # TODO: try adding mac-init.git
@@ -103,7 +108,7 @@ function remove_quarantine() {
 }
 
 function install_pip3_packages() {
-    pip3_packages=(anaconda numpy matplotlib pandas pylint rope virtualenv)
+
     info "Installing pip packages \"${pip3_packages[*]}\""
 
     pip3_list_outcome=$(pip3 list)
