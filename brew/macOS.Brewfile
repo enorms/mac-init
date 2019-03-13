@@ -21,7 +21,6 @@ brew "mas"
 cask "dropbox"
 
 
-
 # VPN
 cask "nordvpn"
 
@@ -50,7 +49,6 @@ brew "git"
 # Visual git manager
 cask "sourcetree"
 
-
 ## Tools
 # Text editing
 cask "sublime-text"
@@ -69,19 +67,14 @@ brew "python"
 brew "python@2"
 cask "anaconda"
 
-# For react-native
-# Package managers
+## react-native
 brew "node"
-brew "yarn"
-
 brew "watchman"
 brew "react-native-cli"
-
-# Includes adb
+brew "yarn"
 cask "android-platform-tools"
 
-
-# jdk 11 does not work, grab 8
+# JDK 8
 tap "caskroom/versions"
 cask "java8"
 
