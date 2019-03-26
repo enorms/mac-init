@@ -7,7 +7,7 @@ REPO=~/github/mac-init/
 BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
 
 # Update the packages wanted
-pip3_packages=(anaconda numpy matplotlib pandas pylint rope virtualenv)
+pip3_packages=(numpy matplotlib pandas scipy seaborn pylint rope pytest virtualenv anaconda python-barcode python-dateutil)
 yarn_packages=(json create-react-app)
 
 
