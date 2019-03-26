@@ -36,9 +36,20 @@ Pruned 1 symbolic links and 2 directories from /usr/local
 
 ## Usage notes
 
-* Anaconda
-To run:
+# Anaconda
+
+* Install
+
+`brew cask install anaconda`
+
+* To run:
+
 `source /usr/local/anaconda3/bin/activate`
+
+* Add to path:
+
+`export PATH=/usr/local/anaconda3/bin:$PATH`
+
 
 ## TODO
 store basic dotfiles
