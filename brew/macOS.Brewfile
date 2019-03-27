@@ -17,9 +17,8 @@ brew "mas"
 # Passwords - must do manually to get v6
 # cask "1password"
 
-# Files
+# File sync
 cask "dropbox"
-
 
 # VPN
 cask "nordvpn"
@@ -40,6 +39,10 @@ mas "Slack", id: 803453959
 # Applications
 mas "Numbers", id:409203825	#By: Apple Inc.
 mas "Pages", id:409201541	#By: Apple Inc.
+
+# Latex editor
+cask "mactex-no-gui"
+cask "lyx"
 
 
 ### CS
