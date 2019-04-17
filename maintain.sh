@@ -36,7 +36,11 @@ main() {
     install_pip3_packages
 
     # Install yarn packages; used for react-native
-#    install_yarn_packages
+    install_yarn_packages
+
+    # Check if outstanding Apple system updates are available
+    update_softwareupdate
+
 }
 
 
@@ -78,8 +82,8 @@ function install_packages_with_brewfile() {
 
 function update_homebrew() {
     info "Homebrew update started."
-    substep "List packages: "
-    brew list
+    # substep "List packages: "
+    # brew list
     substep "Check for updates... "
     brew update
     brew upgrade
@@ -88,8 +92,8 @@ function update_homebrew() {
 
 function update_cask() {
     info "Cask update started."
-    substep "List packages: "
-    brew cask list
+    # substep "List packages: "
+    # brew cask list
     substep "Check for updates... "
     brew cask outdated
     brew cask upgrade
@@ -98,12 +102,20 @@ function update_cask() {
 
 function update_mas() {
     info "Mas update started."
-    substep "List packages: "
-    mas list
-substep "Check for updates... "
+    # substep "List packages: "
+    # mas list
+    substep "Check for updates... "
     mas outdated
     mas upgrade
     success "Mas update completed."
+}
+
+function update_softwareupdate() {
+    info "Softwareupdate has started."
+    substep "Check for updates... "
+    softwareupdate --list
+    softwareupdate --install --recommended
+    success "Update recommended only; update all: softwareupdate --install --all."
 }
 
 function install_pip3_packages() {
