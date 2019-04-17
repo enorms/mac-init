@@ -18,6 +18,32 @@ Execute `bootstrap` function freely which in turn executes the bootstrapping scr
 
 ## Modifications after install
 
+### Update Path
+
+# Anaconda
+
+`export PATH=/usr/local/anaconda3/bin:$PATH`
+
+#Android Tools add to path:
+``` SHELL
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+* Lyx
+Add to path:
+``` SHELL
+export PATH=/usr/local/texlive/2018/bin:$PATH
+export PATH=/usr/local/texlive/2018/bin/x86_64-darwin/xelatex:$PATH
+export PATH=/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
+export PATH=/usr/local/texlive/2018/texmf-dist/tex/latex:$PATH
+export PATH=/usr/local/texlive/2018/texmf-dist/tex/:$PATH
+```
+
+
 ### To remove unneeded applications
 
 If installed via brew, use brew bundle uninstall, like this:
@@ -36,19 +62,9 @@ Pruned 1 symbolic links and 2 directories from /usr/local
 
 ## Usage notes
 
-# Anaconda
-
-* Install
-
-`brew cask install anaconda`
-
-* To run:
-
+* Anaconda
+To run:
 `source /usr/local/anaconda3/bin/activate`
-
-* Add to path:
-
-`export PATH=/usr/local/anaconda3/bin:$PATH`
 
 
 ## TODO
