@@ -6,7 +6,7 @@
 # anaconda - for iPython
 # for work - numpy matplotlib pandas
 # For MS VS Code: (lint, rename files) (pylint rope)
-pip3_packages=(anaconda numpy matplotlib pandas pylint rope virtualenv)
+pip3_packages=(anaconda numpy matplotlib pandas pylint pytest rope virtualenv)
 
 # Installing typescript for YouCompleteMe and prettier for Neoformat to auto-format files
 # json for auto-formatting of json responses in terminal
