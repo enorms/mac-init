@@ -44,6 +44,12 @@ mas "Pages", id:409201541	#By: Apple Inc.
 cask "mactex-no-gui"
 cask "lyx"
 
+# Other
+# Remote Windows Desktops
+cask "amazon-workspaces"
+# Game system
+cask "steam"
+
 
 ### CS
 ## Frameworks
