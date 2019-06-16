@@ -17,7 +17,7 @@ settings/network/advanced/dns/+ 127.0.0.1
 http://pi.hole/admin, http://127.0.0.1/admin/
 # Restart computer if not working
 
-# Set privacy level to no stats mode, click apply
+# Set privacy level to "Anonymous mode mode", click apply # No Stats does not update dashboard
 http://127.0.0.1/admin/settings.php?tab=privacy
 
 # Set upstream DNS to Cloudflare, click save
