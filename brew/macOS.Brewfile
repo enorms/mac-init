@@ -54,6 +54,7 @@ cask "steam"
 ### CS
 ## Frameworks
 brew "git"
+cask "docker"
 
 # Visual git manager
 cask "sourcetree"
