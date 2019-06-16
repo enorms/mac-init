@@ -1,0 +1,28 @@
+# If needed, install docker desktop for mac
+$ brew cask install docker
+
+# Launch docker.app (whale toolbar)
+
+# From the directory /mac-init/pihole
+# Grab the latest run script and run it
+$ curl -O https://raw.githubusercontent.com/pi-hole/docker-pi-hole/master/docker_run.sh
+BASH docker_run.sh
+
+# Remove admin password, since it's only available on the local Mac
+docker exec pihole pihole -a -p
+
+# Set mac to pihole DNS: 
+settings/network/advanced/dns/+ 127.0.0.1
+#check by accessing pihole dashboard with one of the following:
+http://pi.hole/admin, http://127.0.0.1/admin/
+# Restart computer if not working
+
+# Set privacy level to no stats mode, click apply
+http://127.0.0.1/admin/settings.php?tab=privacy
+
+# Set upstream DNS to Cloudflare, click save
+http://127.0.0.1/admin/settings.php?tab=dns
+
+
+Ref:
+https://www.youtube.com/watch?v=932pZuzcvO8
