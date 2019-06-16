@@ -2,6 +2,7 @@
 $ brew cask install docker
 
 # Launch docker.app (whale toolbar)
+# Settings: general/send usage stats=False, disk image size=16gb
 
 # From the directory /mac-init/pihole
 # Grab the latest run script and run it
