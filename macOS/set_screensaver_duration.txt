@@ -1,0 +1,15 @@
+
+# Check current slide duration:
+sudo /usr/libexec/PlistBuddy -c "print ':JustASlide:mainDuration'" /System/Library/PrivateFrameworks/Slideshows.framework/Versions/A/Resources/Content/EffectDescriptions.plist
+
+
+# Disable SIP - restart in recovery (cmd-r), util > terminal
+csrutil disable
+
+# Set slide duration to the desired value in seconds
+
+sudo /usr/libexec/PlistBuddy -c "set ':JustASlide:mainDuration' 600" /System/Library/PrivateFrameworks/Slideshows.framework/Versions/A/Resources/Content/EffectDescriptions.plist
+
+
+# Enable SIP - restart in recovery (cmd-r), util > terminal
+csrutil enable
