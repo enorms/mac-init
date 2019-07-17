@@ -41,6 +41,7 @@ mas "Slack", id: 803453959
 mas "Numbers", id:409203825	#By: Apple Inc.
 mas "Pages", id:409201541	#By: Apple Inc.
 cask "libreoffice"
+cask "sketch"
 
 # Latex editor
 cask "mactex-no-gui"
