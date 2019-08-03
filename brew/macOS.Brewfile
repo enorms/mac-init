@@ -58,6 +58,8 @@ cask "steam"
 ## Frameworks
 brew "git"
 cask "docker"
+# Virtual Machine management
+cask "vagrant"
 
 # Visual git manager
 cask "sourcetree"
