@@ -89,9 +89,9 @@ brew "react-native-cli"
 brew "yarn"
 cask "android-platform-tools"
 
-# JDK 8
-tap "caskroom/versions"
-cask "java8"
+# JDK 8 # React Native wanted openJDK
+# tap "caskroom/versions"
+# cask "java8"
 
 # Flutter / Dart
 brew "dart"

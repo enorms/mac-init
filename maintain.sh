@@ -64,8 +64,8 @@ function remove_unlisted_bundle_items() {
 
 function install_packages_with_brewfile() {
     info "Installing packages within ${BREW_FILE_PATH}"
-    substep "List all dependencies: "
-    brew bundle list --all --file="$BREW_FILE_PATH"
+#    substep "List all dependencies: "
+#    brew bundle list --all --file="$BREW_FILE_PATH"
 
     # Use verbose mode
     if brew bundle check -v --file="$BREW_FILE_PATH" &> /dev/null; then
@@ -113,9 +113,9 @@ function update_mas() {
 function update_softwareupdate() {
     info "Softwareupdate has started."
     substep "Check for updates... "
-    softwareupdate --list
-    softwareupdate --install --recommended
-    success "Update recommended only; update all: softwareupdate --install --all."
+    # softwareupdate --list
+    sudo softwareupdate --install --recommended --restart
+    success "softwareupdate completed"
 }
 
 function install_pip3_packages() {
