@@ -4,11 +4,18 @@ $ brew cask install docker
 # Launch docker.app (whale toolbar)
 # Settings: general/send usage stats=False, disk image size=16gb
 
-# From the directory /mac-init/pihole
+# OPTIONAL From the directory /mac-init/pihole
 # Grab the latest run script and run it
 $ curl -O https://raw.githubusercontent.com/pi-hole/docker-pi-hole/master/docker_run.sh
+
+# set DHCP forwarding to all
+# add this to docker run: --net=host	# if missing, will get errors
+# delete all ports (ie. "-p 53:53/tcp")
+
+# Run the script to pull, install, and run
 BASH docker_run.sh
 
+# If run is successful, the last message should be: assigning random password
 # Remove admin password, since it's only available on the local Mac
 docker exec pihole pihole -a -p
 
