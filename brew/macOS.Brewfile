@@ -13,6 +13,7 @@ brew "mas"
 
 
 ### basic tools
+mas "The Unarchiver", id:425424353	# for RAR
 
 # Passwords - must do manually to get v6
 # cask "1password"
@@ -43,14 +44,11 @@ mas "Pages", id:409201541	#By: Apple Inc.
 cask "libreoffice"
 cask "sketch"
 
-# Latex editor
-cask "mactex-no-gui"
-cask "lyx"
+# Latex editor	# unused as of 2019-09
+# cask "mactex-no-gui"
+# cask "lyx"
 
-# Other
-# Remote Windows Desktops
-cask "amazon-workspaces"
-# Game system
+# Games
 cask "steam"
 
 
@@ -58,26 +56,34 @@ cask "steam"
 ## Frameworks
 brew "git"
 cask "docker"
+
 # Virtual Machine management
 cask "vagrant"
 
 # Visual git manager
 cask "sourcetree"
 
-## Tools
 # Text editing
 cask "sublime-text"
+
+# Real time markdown rendering
 cask "macdown"
 
 # IDE
 cask "visual-studio-code"
+
+# Needed for Android dev
 cask "android-studio"
+
+# For Google Cloud
 cask "google-cloud-sdk"
+
+# For iOS / Apple dev
 mas "Xcode", id: 497799835
 
 
 ## Languages
-# Python, 2, 3, and iPython
+# Python 3, 2, iPython
 brew "python"
 brew "python@2"
 cask "anaconda"
