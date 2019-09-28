@@ -11,7 +11,7 @@ pip3_packages=(anaconda numpy matplotlib pandas pylint pytest rope virtualenv)
 # Installing typescript for YouCompleteMe and prettier for Neoformat to auto-format files
 # json for auto-formatting of json responses in terminal
 # vmd for previewing markdown files
-yarn_packages=(prettier typescript json vmd create-react-app @vue/cli)
+yarn_packages=(expo-cli prettier typescript json vmd create-react-app @vue/cli)
 
 # failed on first try with: REPO=~/github/mac-init
 # TODO: try adding mac-init.git
