@@ -80,7 +80,7 @@ cask "google-cloud-sdk"
 
 # For iOS / Apple dev
 mas "Xcode", id: 497799835
-
+brew "cocoapods"
 
 ## Languages
 # Python 3, 2, iPython
@@ -100,4 +100,4 @@ cask "android-platform-tools"
 # cask "java8"
 
 # Flutter / Dart
-brew "dart"
+# brew "dart"
