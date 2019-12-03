@@ -82,13 +82,14 @@ mas "Xcode", id: 497799835
 brew "cocoapods"
 
 ## Languages
-# Python 3, 2, iPython
+# Python
 brew "python"
 brew "python@2"
 cask "anaconda"
 
 # r
 cask "rstudio"
+cask "r"
 
 ## react-native
 brew "node"
