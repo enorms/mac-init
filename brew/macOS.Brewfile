@@ -72,8 +72,7 @@ cask "macdown"
 # IDE
 cask "visual-studio-code"
 
-# Needed for Android dev
-cask "android-studio"
+
 
 # For Google Cloud
 cask "google-cloud-sdk"
@@ -88,12 +87,18 @@ brew "python"
 brew "python@2"
 cask "anaconda"
 
+# r
+cask "rstudio"
+
 ## react-native
 brew "node"
 brew "watchman"
 brew "react-native-cli"
 brew "yarn"
 cask "android-platform-tools"
+
+# For Android dev, helpful for React Native
+cask "android-studio"
 
 # JDK 8 # React Native wanted openJDK
 # tap "caskroom/versions"
