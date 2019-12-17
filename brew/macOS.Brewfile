@@ -41,7 +41,7 @@ mas "Slack", id: 803453959
 # Applications
 mas "Numbers", id:409203825	#By: Apple Inc.
 mas "Pages", id:409201541	#By: Apple Inc.
-cask "libreoffice"
+# cask "libreoffice" # Mac OS preventing launch, not verified
 cask "sketch"
 
 # Latex editor	# unused as of 2019-09
@@ -94,6 +94,9 @@ brew "watchman"
 brew "react-native-cli"
 brew "yarn"
 cask "android-platform-tools"
+
+# Jekyll runs fine with standard mac installed ruby
+# brew "ruby" # for jekyll, "current stable Ruby"
 
 # JDK 8 # React Native wanted openJDK
 # tap "caskroom/versions"
