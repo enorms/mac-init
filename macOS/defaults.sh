@@ -33,8 +33,8 @@ function configure_mac() {
     defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 
     ## Configure keyboard repeat https://apple.stackexchange.com/a/83923/200178
-    # defaults write -g InitialKeyRepeat -int 15
-    # defaults write -g KeyRepeat -int 2
+    defaults write -g InitialKeyRepeat -int 30 # normal minimum is 15 (225 ms)
+    defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
     ## Disable "Correct spelling automatically"
      defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
