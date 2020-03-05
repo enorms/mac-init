@@ -1,83 +1,21 @@
 #!/usr/bin/env bash
 
-### Set variables
+##### This script simply updates what is installed.
+##### For changing what is installed, run the main installer.
+##### That makes this safe to run anytime
+##### and more likely to keep the main installer up to date.
+
 
 # Set the local repo
 REPO=~/github/mac-init/
 BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
 
-# Update the packages wanted
-pip3_packages=(numpy matplotlib pandas scipy seaborn pylint rope pytest virtualenv anaconda python-barcode python-dateutil)
-yarn_packages=(json create-react-app)
-
-
-### Define functions
 
 main() {
-
-    # Get master password
-    ask_for_sudo
-
-    # Install 'brew', 'cask', and 'mas' packages
-    # To force remove anything not there, uncomment the following line
-    remove_unlisted_bundle_items
-    install_packages_with_brewfile
-
-    # Update Homebrew
     update_homebrew
-
-    # Update Cask
     update_cask
-
-    # Update Mas
     update_mas
-
-    # Install pip3 packages
-    install_pip3_packages
-
-    # Install yarn packages; used for react-native
-    install_yarn_packages
-
-    # Check if outstanding Apple system updates are available
-    update_softwareupdate
-
-}
-
-
-function ask_for_sudo() {
-    info "Prompting for sudo password"
-    if sudo --validate; then
-        # Keep-alive
-        while true; do sudo --non-interactive true; \
-            sleep 10; kill -0 "$$" || exit; done 2>/dev/null &
-        success "Sudo password updated"
-    else
-        error "Sudo password update failed"
-        exit 1
-    fi
-}
-
-function remove_unlisted_bundle_items() {
-    brew bundle cleanup --force -v --file="$BREW_FILE_PATH"
-}
-
-
-function install_packages_with_brewfile() {
-    info "Installing packages within ${BREW_FILE_PATH}"
-#    substep "List all dependencies: "
-#    brew bundle list --all --file="$BREW_FILE_PATH"
-
-    # Use verbose mode
-    if brew bundle check -v --file="$BREW_FILE_PATH" &> /dev/null; then
-        success "Brewfile's dependencies are already satisfied "
-    else
-        if brew bundle -v --file="$BREW_FILE_PATH"; then
-            success "Brewfile installation succeeded"
-        else
-            error "Brewfile installation failed"
-            exit 1
-        fi
-    fi
+    update_softwareupdate # Update Apple system software
 }
 
 function update_homebrew() {
@@ -118,54 +56,8 @@ function update_softwareupdate() {
     success "softwareupdate completed"
 }
 
-function install_pip3_packages() {
-    info "Installing pip packages \"${pip3_packages[*]}\""
 
-    pip3_list_outcome=$(pip3 list)
-    for package_to_install in "${pip_packages[@]}"
-    do
-        if echo "$pip3_list_outcome" | \
-            grep --ignore-case "$package_to_install" &> /dev/null; then
-            substep "\"${package_to_install}\" already exists"
-        else
-            if pip3 install "$package_to_install"; then
-                substep "Package \"${package_to_install}\" installation succeeded"
-            else
-                error "Package \"${package_to_install}\" installation failed"
-                exit 1
-            fi
-        fi
-    done
-
-    success "pip packages successfully installed"
-}
-
-function install_yarn_packages() {
-    # json for auto-formatting of json responses in terminal
-    info "Installing yarn packages \"${yarn_packages[*]}\""
-
-    yarn_list_outcome=$(yarn global list)
-    for package_to_install in "${yarn_packages[@]}"
-    do
-        if echo "$yarn_list_outcome" | \
-            grep --ignore-case "$package_to_install" &> /dev/null; then
-            substep "\"${package_to_install}\" already exists"
-        else
-            if yarn global add "$package_to_install"; then
-                substep "Package \"${package_to_install}\" installation succeeded"
-            else
-                error "Package \"${package_to_install}\" installation failed"
-                exit 1
-            fi
-        fi
-    done
-
-    success "yarn packages successfully installed"
-}
-
-
-### Add color to Terminal status prints
-
+### Helper functions
 function coloredEcho() {
     local exp="$1";
     local color="$2";
@@ -204,7 +96,5 @@ function error() {
     coloredEcho "$1" red "========>"
 }
 
-
-### Execute program
 
 main "$@"
