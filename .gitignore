@@ -1,3 +1,6 @@
+# Brew versions
+brew/*lock*
+
 ## Python
 # Pihole
 pihole/etc*
