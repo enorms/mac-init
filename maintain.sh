@@ -52,7 +52,7 @@ function update_softwareupdate() {
     info "Softwareupdate has started."
     substep "Check for updates... "
     # softwareupdate --list
-    sudo softwareupdate --install --recommended --restart
+    sudo softwareupdate --install --recommended --restart #sudo needed to restart
     success "softwareupdate completed"
 }
 
