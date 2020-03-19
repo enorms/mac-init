@@ -42,8 +42,9 @@ mas "Slack", id: 803453959
 mas "Numbers", id:409203825	#By: Apple Inc.
 mas "Pages", id:409201541	#By: Apple Inc.
 # cask "libreoffice" # Mac OS preventing launch, not verified
-cask "sketch"
+# cask "sketch"	# these days it's Figma
 cask "kindle"
+cask "fritzing"	# electrical engineering CAD
 
 # Latex editor	# unused as of 2019-09
 # cask "mactex-no-gui"
@@ -98,6 +99,7 @@ brew "watchman"
 brew "react-native-cli"
 brew "yarn"
 cask "android-platform-tools"
+brew "ios-deploy" # launch from Terminal; Xcode not needed
 
 # Jekyll runs fine with standard mac installed ruby
 # brew "ruby" # for jekyll, "current stable Ruby"
