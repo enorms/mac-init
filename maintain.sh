@@ -12,10 +12,24 @@ BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
 
 
 main() {
+    get_sudo  # in advance for software update
     update_homebrew
     update_cask
     update_mas
     update_softwareupdate # Update Apple system software
+}
+
+function get_sudo() {
+    info "Prompting for sudo password"
+    if sudo --validate; then
+        # Keep-alive
+        while true; do sudo --non-interactive true; \
+            sleep 10; kill -0 "$$" || exit; done 2>/dev/null &
+        success "Sudo password updated"
+    else
+        error "Sudo password update failed"
+        exit 1
+    fi
 }
 
 function update_homebrew() {
