@@ -1,0 +1,1 @@
+sudo chmod a+wx ~/Library/"Application Support"/Google
