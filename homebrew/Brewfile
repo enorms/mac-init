@@ -27,6 +27,7 @@ cask "geekbench"
 cask "gnucash"
 cask "google-chrome"
 cask "google-cloud-sdk"
+cask "karabiner-elements"
 cask "macdown"
 cask "ngrok"
 cask "nordvpn"
@@ -42,6 +43,7 @@ cask "sublime-text"
 cask "tripmode"
 cask "vagrant"
 cask "visual-studio-code"
+mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
