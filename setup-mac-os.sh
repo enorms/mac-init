@@ -15,7 +15,7 @@ yarn_packages=(expo-cli prettier typescript json vmd create-react-app @vue/cli)
 
 # failed on first try with: REPO=~/github/mac-init
 # TODO: try adding mac-init.git
-REPO=~/github/mac-init/
+REPO=~dev_local/github/mac-init/
 
 BREW_FILE_PATH="${REPO}/homebrew/Brewfile"
 
