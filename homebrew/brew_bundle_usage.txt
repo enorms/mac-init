@@ -1,0 +1,52 @@
+// https://docs.brew.sh/Manpage#bundle-subcommand
+
+
+# Commands
+
+## Print to screen
+
+# brew only
+
+brew bundle list
+
+# adds: cask, mas
+
+rew bundle list --all
+
+
+## Export to file
+
+# creates: Brewfile (overwrites with --force)
+
+brew bundle dump --describe --force
+
+
+## Check if all dependencies are installed from the Brewfile
+
+# print missing
+
+brew bundle check --verbose
+
+
+## Uninstall all dependencies not listed from the Brewfile. 
+
+# Dry run
+
+brew bundle cleanup
+
+# Execute
+
+brew bundle cleanup --force
+
+
+## Install all in brewfile
+
+brew bundle install
+
+
+# Notes
+
+## Brewfile.lock.json 
+
+brew bundle will output a Brewfile.lock.json in the same directory as the Brewfile if all dependencies are installed successfully. This contains dependency and system status information which can be useful in debugging brew bundle failures and replicating a “last known good build” state. You can opt-out of this behaviour by setting the HOMEBREW_BUNDLE_NO_LOCK environment variable or passing the --no-lock option. You may wish to check this file into the same version control system as your Brewfile (or ensure your version control system ignores it if you’d prefer to rely on debugging information from a local machine).
+

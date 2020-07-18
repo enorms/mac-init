@@ -1,24 +1,56 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "vitorgalvao/tiny-scripts"
+# Arduino command-line interface
+brew "arduino-cli"
+# Dependency manager for Cocoa projects
 brew "cocoapods"
+# The Dart SDK
+brew "dart"
+# Isolated development environments using Docker
+brew "docker-compose", link: false
+# Distributed revision control system
 brew "git"
+# Install and debug iPhone apps from the command-line
 brew "ios-deploy"
+# Mac App Store command-line interface
 brew "mas"
+# Cross platform, open source .NET development framework
 brew "mono"
+# Open source relational database management system
 brew "mysql"
+# Platform built on V8 to build network applications
 brew "node"
-brew "python"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# Interpreted, interactive, object-oriented programming language
 brew "python@2"
+# Software environment for statistical computing
+brew "r"
+# The React Native CLI tools
 brew "react-native-cli"
+# Powerful, clean, object-oriented scripting language
 brew "ruby"
+# C++ Library Manager
+brew "vcpkg"
+# Watch files and take action when they change
 brew "watchman"
+# JavaScript package manager
 brew "yarn"
+# Quickly repair outdated/broken Casks from homebrew-cask
+brew "vitorgalvao/tiny-scripts/cask-repair"
 cask "anaconda"
+cask "android-platform-tools"
+cask "android-studio"
 cask "arduino"
 cask "discord"
 cask "docker"
 cask "dropbox"
+cask "duet"
 cask "firefox"
 cask "freecad"
 cask "fritzing"
@@ -32,19 +64,26 @@ cask "ngrok"
 cask "nordvpn"
 cask "openra"
 cask "postman"
+cask "resilio-sync"
 cask "sizeup"
 cask "sketch"
 cask "skype"
 cask "sourcetree"
 cask "steam"
 cask "sublime-text"
+cask "trader-workstation"
+cask "transmission"
 cask "tripmode"
 cask "vagrant"
 cask "visual-studio-code"
+mas "BlueSee", id: 1336679524
+mas "Brother iPrint&Scan", id: 1193539993
+mas "Gapplin", id: 768053424
+mas "Gemini 2", id: 1090488118
 mas "Keynote", id: 409183694
-mas "Kindle", id: 405399194
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "ScreenBrush", id: 1233965871
 mas "Slack", id: 803453959
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835

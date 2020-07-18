@@ -1,0 +1,3 @@
+$ brew deps yarn
+icu4c
+node

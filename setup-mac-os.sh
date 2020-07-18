@@ -15,9 +15,9 @@ yarn_packages=(expo-cli prettier typescript json vmd create-react-app @vue/cli)
 
 # failed on first try with: REPO=~/github/mac-init
 # TODO: try adding mac-init.git
-REPO=~/dev_local/github/mac-init/
+REPO=~/dev_local/github/mac-init
 
-BREW_FILE_PATH="${REPO}homebrew/Brewfile"
+BREW_FILE_PATH="${REPO}/homebrew/Brewfile"
 
 
 ### Define functions
@@ -92,10 +92,11 @@ url=https://raw.githubusercontent.com/lifekaizen/mac-init/master/installers/home
 }
 
 function install_packages_with_brewfile() {
-    info "Installing packages within ${BREW_FILE_PATH}"
+    info "Installing from Brewfile"
     if brew bundle check --file="$BREW_FILE_PATH" &> /dev/null; then
         success "Brewfile's dependencies are already satisfied "
     else
+        error bundle check --verbose --file="$BREW_FILE_PATH"
         if brew bundle --file="$BREW_FILE_PATH"; then
             success "Brewfile installation succeeded"
         else
