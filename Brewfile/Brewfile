@@ -11,6 +11,8 @@ brew "arduino-cli"
 brew "cocoapods"
 # The Dart SDK
 brew "dart"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Isolated development environments using Docker
 brew "docker-compose", link: false
 # Distributed revision control system
@@ -76,6 +78,7 @@ cask "transmission"
 cask "tripmode"
 cask "vagrant"
 cask "visual-studio-code"
+cask "zoomus"
 mas "BlueSee", id: 1336679524
 mas "Brother iPrint&Scan", id: 1193539993
 mas "Gapplin", id: 768053424
