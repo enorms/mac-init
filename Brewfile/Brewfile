@@ -9,8 +9,6 @@ tap "vitorgalvao/tiny-scripts"
 brew "arduino-cli"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
-# The Dart SDK
-brew "dart"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Isolated development environments using Docker
