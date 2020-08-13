@@ -29,8 +29,6 @@ brew "node"
 brew "pkg-config"
 # Interpreted, interactive, object-oriented programming language
 brew "python@2"
-# Software environment for statistical computing
-brew "r"
 # The React Native CLI tools
 brew "react-native-cli"
 # Powerful, clean, object-oriented scripting language
@@ -44,16 +42,12 @@ brew "yarn"
 # Quickly repair outdated/broken Casks from homebrew-cask
 brew "vitorgalvao/tiny-scripts/cask-repair"
 cask "anaconda"
-cask "android-platform-tools"
-cask "android-studio"
 cask "arduino"
 cask "discord"
 cask "docker"
 cask "dropbox"
 cask "duet"
-cask "firefox"
 cask "freecad"
-cask "fritzing"
 cask "geekbench"
 cask "gnucash"
 cask "google-chrome"
@@ -64,7 +58,8 @@ cask "ngrok"
 cask "nordvpn"
 cask "openra"
 cask "postman"
-cask "resilio-sync"
+cask "quicken"
+cask "signal"
 cask "sizeup"
 cask "sketch"
 cask "skype"
@@ -72,7 +67,6 @@ cask "sourcetree"
 cask "steam"
 cask "sublime-text"
 cask "trader-workstation"
-cask "transmission"
 cask "tripmode"
 cask "vagrant"
 cask "visual-studio-code"
@@ -81,7 +75,6 @@ mas "BlueSee", id: 1336679524
 mas "Brother iPrint&Scan", id: 1193539993
 mas "Gapplin", id: 768053424
 mas "Gemini 2", id: 1090488118
-mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "ScreenBrush", id: 1233965871

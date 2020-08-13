@@ -1,0 +1,13 @@
+#  swap apps
+
+## Casks
+android-studio
+android-platform-tools
+freecad
+fritzing
+resilio-sync
+transmission
+
+FreeCad
+Runway
+VirtualBox
