@@ -11,7 +11,7 @@ brew bundle list
 
 # adds: cask, mas
 
-rew bundle list --all
+brew bundle list --all
 
 
 ## Export to file
