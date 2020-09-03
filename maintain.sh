@@ -38,7 +38,7 @@ function update_homebrew() {
     # brew list
     substep "Check for updates... "
     brew update
-    brew upgrade
+    brew upgrade --display-times
     success "Homebrew update completed."
 }
 
@@ -47,8 +47,8 @@ function update_cask() {
     # substep "List packages: "
     # brew cask list
     substep "Check for updates... "
-    brew cask outdated
-    brew cask upgrade
+    brew outdated --cask
+    brew upgrade --cask
     success "Cask update completed."
 }
 
