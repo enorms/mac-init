@@ -17,6 +17,8 @@ brew "docker-compose", link: false
 brew "git"
 # Install and debug iPhone apps from the command-line
 brew "ios-deploy"
+# Interactive computing in Python
+brew "ipython"
 # Mac App Store command-line interface
 brew "mas"
 # Cross platform, open source .NET development framework
@@ -31,8 +33,6 @@ brew "pkg-config"
 brew "python@2"
 # The React Native CLI tools
 brew "react-native-cli"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # C++ Library Manager
 brew "vcpkg"
 # Watch files and take action when they change
@@ -41,7 +41,6 @@ brew "watchman"
 brew "yarn"
 # Quickly repair outdated/broken Casks from homebrew-cask
 brew "vitorgalvao/tiny-scripts/cask-repair"
-cask "anaconda"
 cask "arduino"
 cask "discord"
 cask "docker"

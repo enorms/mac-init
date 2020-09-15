@@ -1,3 +1,15 @@
+# This is Git's per-user configuration file.
 [user]
 	name = Eric Norman
-	email = e@eric.cafe
+	email = eric@norman.zone
+[core]
+	excludesfile = /Users/eric/.gitignore_global
+[commit]
+	template = /Users/eric/.stCommitMsg
+
+# https://githowto.com/aliases
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
