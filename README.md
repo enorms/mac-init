@@ -1,6 +1,7 @@
 # mac-init
 More than a dotfile to save preferences, a one-command full environment setup.
 
+
 ## Usage
 
 On a fresh macOS:
@@ -16,6 +17,7 @@ curl --silent https://raw.githubusercontent.com/lifekaizen/mac-init/master/setup
 
 Execute `bootstrap` function freely which in turn executes the bootstrapping script.
 
+
 ## Modifications after install
 
 ### Update Path
@@ -24,7 +26,7 @@ Execute `bootstrap` function freely which in turn executes the bootstrapping scr
 
 `export PATH=/usr/local/anaconda3/bin:$PATH`
 
-#Android Tools add to path:
+# Android Tools:
 ``` SHELL
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -33,8 +35,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 
-* Lyx
-Add to path:
+# Lyx
 ``` SHELL
 export PATH=/usr/local/texlive/2018/bin:$PATH
 export PATH=/usr/local/texlive/2018/bin/x86_64-darwin/xelatex:$PATH
@@ -60,6 +61,7 @@ Uninstalled 1 cask
 Pruned 1 symbolic links and 2 directories from /usr/local
 ```
 
+
 ## Usage notes
 
 * Anaconda
@@ -72,68 +74,11 @@ store basic dotfiles
 
 choose brew and cask install applications and dev environments
 
-###brew packages:
-autoconf
-automake
-cloudfoundry/tap/cf-cli
-cmake
-gcc
-gdbm
-gmp	
-gnutls
-hwloc
-icu4c
-isl
-libffi
-libgcrypt
-libgpg-error
-libimobiledevice
-libmicrohttpd
-libmpc
-libplist
-libtasn1
-libtool
-libunistring
-libusb
-libxml2
-libzip
-mongodb	// optional
-mpfr
-nettle
-openssl
-p11-kit
-pcre
-pkg-config
-python
-python@2
-readline
-sphinx-doc
-sqlite
-usbmuxd
-xz	// unknown
+
+Check missing packages: `brew list --cask`
+May need to be in dir with Brewfile
 
 
-#### react-native:
-watchman
-yarn
-ideviceinstaller
-ios-deploy
-node
-
-#### flutter:
-dart
-
-#### docker:
-docker
-kubernetes-cli
-kubernetes-helm
-
-###cask apps:
-
-* android-platform-tools	//adb
-* macdown
-
-When complete, the above should show in `brew cask list`.
 
 ## Reference
 

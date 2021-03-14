@@ -5,57 +5,57 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "vitorgalvao/tiny-scripts"
-# Arduino command-line interface
 brew "arduino-cli"
-# Dependency manager for Cocoa projects
-brew "cocoapods"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
-# Isolated development environments using Docker
-brew "docker-compose", link: false
-# Distributed revision control system
-brew "git"
-# Install and debug iPhone apps from the command-line
-brew "ios-deploy"
-# Interactive computing in Python
-brew "ipython"
-# Mac App Store command-line interface
-brew "mas"
-# Cross platform, open source .NET development framework
-brew "mono"
-# Open source relational database management system
-brew "mysql"
-# Platform built on V8 to build network applications
-brew "node"
-# Manage compile and link flags for libraries
 brew "pkg-config"
-# Interpreted, interactive, object-oriented programming language
+brew "ccache"
+brew "cmake"
+brew "cocoapods"
+brew "diff-pdf"
+brew "docker-compose"
+brew "gcc@6"
+brew "gh"
+brew "git"
+brew "graphviz"
+brew "ios-deploy"
+brew "ipython"
+brew "make"
+brew "mas"
+brew "mono"
+brew "mysql"
+brew "ninja"
+brew "node"
+brew "openjdk@8"
+brew "pyenv"
+brew "pyenv-virtualenv"
 brew "python@2"
-# The React Native CLI tools
+brew "python@3.8"
 brew "react-native-cli"
-# C++ Library Manager
+brew "ruby"
+brew "tig"
 brew "vcpkg"
-# Watch files and take action when they change
 brew "watchman"
-# JavaScript package manager
+brew "wget"
 brew "yarn"
-# Quickly repair outdated/broken Casks from homebrew-cask
 brew "vitorgalvao/tiny-scripts/cask-repair"
+cask "anaconda"
 cask "arduino"
+cask "brave-browser"
 cask "discord"
 cask "docker"
 cask "dropbox"
 cask "duet"
-cask "freecad"
 cask "geekbench"
 cask "gnucash"
 cask "google-chrome"
 cask "google-cloud-sdk"
 cask "karabiner-elements"
 cask "macdown"
+cask "meld"
+cask "microsoft-teams"
 cask "ngrok"
 cask "nordvpn"
 cask "openra"
+cask "oversight"
 cask "postman"
 cask "quicken"
 cask "signal"
@@ -69,7 +69,9 @@ cask "trader-workstation"
 cask "tripmode"
 cask "vagrant"
 cask "visual-studio-code"
-cask "zoomus"
+cask "whatsapp"
+cask "xquartz"
+cask "zoom"
 mas "BlueSee", id: 1336679524
 mas "Brother iPrint&Scan", id: 1193539993
 mas "Gapplin", id: 768053424
@@ -79,4 +81,5 @@ mas "Pages", id: 409201541
 mas "ScreenBrush", id: 1233965871
 mas "Slack", id: 803453959
 mas "The Unarchiver", id: 425424353
+mas "WiFi Explorer", id: 494803304
 mas "Xcode", id: 497799835
