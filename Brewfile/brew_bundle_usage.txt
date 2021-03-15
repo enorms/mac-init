@@ -9,10 +9,6 @@
 
 brew bundle list
 
-# adds: cask, mas
-
-brew bundle list --all
-
 
 ## Export to file
 

@@ -81,7 +81,7 @@ function install_homebrew() {
     if hash brew 2>/dev/null; then
         success "Homebrew already exists"
     else
-url=https://raw.githubusercontent.com/lifekaizen/mac-init/master/installers/homebrew_installer
+				url=https://raw.githubusercontent.com/lifekaizen/mac-init/master/installers/homebrew_installer
         if /usr/bin/ruby -e "$(curl -fsSL ${url})"; then
             success "Homebrew installation succeeded"
         else
