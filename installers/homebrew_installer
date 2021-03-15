@@ -103,7 +103,7 @@ class Version
 
   def initialize(str)
 		if
-    @parts = str&.split(".")&.map { |p| p.to_i }
+    @parts = str.split(".").map { |p| p.to_i }
   end
 
   def <=>(other)
