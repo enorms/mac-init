@@ -30,8 +30,8 @@ main() {
     # Install Homebrew
     install_homebrew
 
-    # Cloning repository for install_packages_with_brewfile to have access to Brewfile
-#    clone_repo
+    # Need on new machine with no existing repo.
+   clone_repo
 
     # Install 'brew', 'cask', and 'mas' packages
     install_packages_with_brewfile
