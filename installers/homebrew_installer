@@ -102,6 +102,7 @@ class Version
   attr_reader :parts
 
   def initialize(str)
+		if
     @parts = str&.split(".")&.map { |p| p.to_i }
   end
 
@@ -115,7 +116,7 @@ class Version
 end
 
 def macos_version
-  @macos_version ||= Version.new(`/usr/bin/sw_vers -productVersion`.chomp[/10\.\d+/])
+  @macos_version ||= Version.new(`/usr/bin/sw_vers -productVersion`.chomp[/[10-11]\.\d+/])
 end
 
 def should_install_command_line_tools?
