@@ -46,6 +46,7 @@ cask "dropbox"
 cask "duet"
 cask "geekbench"
 cask "gnucash"
+cask "google-backup-and-sync"
 cask "google-chrome"
 cask "google-cloud-sdk"
 cask "karabiner-elements"
@@ -83,3 +84,6 @@ mas "Slack", id: 803453959
 mas "The Unarchiver", id: 425424353
 mas "WiFi Explorer", id: 494803304
 mas "Xcode", id: 497799835
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+mas "LiquidText", id: 922765270
