@@ -4,9 +4,12 @@ More than a dotfile to save preferences, a one-command full environment setup.
 
 ## Usage
 
-Install XCode and accept license.
+Install XCode and accept license, via app store
 
-```
+Install XCode CLT
+`xcode-select --install`
+
+```SHELL
 curl --silent https://raw.githubusercontent.com/lifekaizen/mac-init/master/setup-mac-os.sh | bash
 ```
 
@@ -25,7 +28,8 @@ Execute `bootstrap` function freely which in turn executes the bootstrapping scr
 `export PATH=/usr/local/anaconda3/bin:$PATH`
 
 # Android Tools:
-``` SHELL
+
+```SHELL
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -34,6 +38,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 
 # Lyx
+
 ``` SHELL
 export PATH=/usr/local/texlive/2018/bin:$PATH
 export PATH=/usr/local/texlive/2018/bin/x86_64-darwin/xelatex:$PATH
