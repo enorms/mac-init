@@ -31,7 +31,7 @@ main() {
     install_homebrew
 
     # Need on new machine with no existing repo.
-   clone_repo
+    clone_repo
 
     # Install 'brew', 'cask', and 'mas' packages
     install_packages_with_brewfile
@@ -157,6 +157,9 @@ function install_yarn_packages() {
     success "yarn packages successfully installed"
 }
 
+# this failed...? with /usr/bin/sw_vers -productVersion
+# but seemed to copy the repo
+# then can run setup-mac-os.sh from Terminal
 function clone_repo() {
     info "Cloning dotfiles repository into ${REPO}"
     if test -e $REPO; then

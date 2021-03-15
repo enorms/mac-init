@@ -17,21 +17,17 @@ brew bundle list
 brew bundle dump --describe --force
 
 
-## Check if all dependencies are installed from the Brewfile
-
-# print missing
+## Print missing items
 
 brew bundle check --verbose
 
 
-## Uninstall all dependencies not listed from the Brewfile. 
+## Uninstall all items not listed from the Brewfile. 
 
 # Dry run
-
 brew bundle cleanup
 
 # Execute
-
 brew bundle cleanup --force
 
 
