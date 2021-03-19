@@ -25,6 +25,29 @@ function configure_mac() {
     # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
     while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+
+
+# based on: https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+###############################################################################
+# For coding                                                                  #
+###############################################################################
+
+    # Disable automatic capitalization as it’s annoying when typing code
+    defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+    # Disable smart dashes as they’re annoying when typing code
+    defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+    # Disable automatic period substitution as it’s annoying when typing code
+    defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+    # Disable smart quotes as they’re annoying when typing code
+    defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+    # Display ASCII control characters using caret notation in standard text views
+    # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
+    defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -37,12 +60,12 @@ function configure_mac() {
     defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
     ## Disable "Correct spelling automatically"
-     defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+    defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
     quit "Dock"
 
     ## Don’t show recent applications in Dock
-    defaults write com.apple.dock show-recents -bool false
+    # defaults write com.apple.dock show-recents -bool false
 
     ## Set the icon size of Dock items to 36 pixels
     defaults write com.apple.dock tilesize -int 36
@@ -118,7 +141,7 @@ function configure_mac() {
     # defaults write com.apple.finder ShowStatusBar -bool false
 
     ## Enable/Disable Path Bar on bottom of Finder windows
-#    defaults write com.apple.finder ShowPathbar -bool true
+   defaults write com.apple.finder ShowPathbar -bool true
 
     ## Display full POSIX path as Finder window title
      defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
@@ -129,14 +152,6 @@ function configure_mac() {
     ## When performing a search, search the current folder by default
     defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-    ## Disable disk image verification
-    defaults write com.apple.frameworks.diskimages \
-        skip-verify -bool true
-    defaults write com.apple.frameworks.diskimages \
-        skip-verify-locked -bool true
-    defaults write com.apple.frameworks.diskimages \
-        skip-verify-remote -bool true
-    
     ## Use list view in all Finder windows by default
     ## options: icnv, clmv, Flwv, Nlsv
     defaults write com.apple.finder FXPreferredViewStyle -string clmv
@@ -159,6 +174,25 @@ function configure_mac() {
     
     # Restart automatically if the computer freezes
     sudo systemsetup -setrestartfreeze on
+
+
+    # Avoid creating .DS_Store files on network or USB volumes
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+    # Show the ~/Library folder
+    chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+
+    # Expand save panel by default
+    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+    # Expand print panel by default
+    defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+    defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+    # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
+    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 
 
