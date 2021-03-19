@@ -1,0 +1,1 @@
+{"title":"Use media keys to control video playback speed (MacOS, Chrome Extension: Video Speed Controller)","rules":[{"description":"Remap Rewind to Slow Playback Speed","manipulators":[{"type":"basic","from":{"key_code":"rewind"},"to":[{"repeat":false,"key_code":"r"}]}]}]}

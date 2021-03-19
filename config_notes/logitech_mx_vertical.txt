@@ -1,0 +1,26 @@
+CONNECTION
+	BLE skips
+	use Logitech Dongle for better tracking
+
+SCROLL
+	natural direction means iPad style - this is what I expect
+	Apple driver (default, no Logitech or USB Overdrive)
+		preferences > mouse: natural scroll = on
+			note: this may also affect trackpad
+	Logitech driver 
+		*not* natural direction
+		cannot be changed
+		Apple mouse settings do not affect it
+	USB Overdrive
+		could not seem to modify scroll
+		this broke Magic Keyboard
+
+BUTTON MAPPING
+in karabiner
+button:
+	1: left click
+	2: right click
+	3: ?? (should be: center scroll button)
+	4: thumb button closest to me
+	5: thumb button towards computer
+	??: top button

@@ -1,0 +1,23 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Eric Norman
+	email = eric@norman.zone
+[core]
+	excludesfile = /Users/eric/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/eric/.stCommitMsg
+
+# https://githowto.com/aliases
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+[init]
+	defaultBranch = master
