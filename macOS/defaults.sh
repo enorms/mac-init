@@ -1,3 +1,25 @@
+# Terminal commands are a fast and precise way to customize all the little settings
+# 
+# To apply all, execute as shell program.
+# 
+# To specify one, use terminal directly as follows.
+# 
+# Check current setting:
+# (base) eric@mbp-16 mac-init % defaults read NSGlobalDomain AppleShowScrollBars
+# Always
+# 
+# Set:
+# defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+# 
+# 
+# References
+# https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+# https://www.learningosx.com/101-ways-to-tweak-os-x-using-terminal/
+# https://www.cnet.com/news/check-defaults-before-altering-hidden-settings-in-os-x/
+# https://superuser.com/questions/427154/reset-mac-os-x-terminal-to-default/448679
+# 
+
+
 #!/usr/bin/env bash
 
 
@@ -27,7 +49,6 @@ function configure_mac() {
 
 
 
-# based on: https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 ###############################################################################
 # For coding                                                                  #
 ###############################################################################
@@ -71,11 +92,11 @@ function configure_mac() {
     defaults write com.apple.dock tilesize -int 36
 
     ## Remove all (default) app icons from the Dock
-    defaults write com.apple.dock persistent-apps -array
-    defaults write com.apple.dock recent-apps -array
+    # defaults write com.apple.dock persistent-apps -array
+    # defaults write com.apple.dock recent-apps -array
 
     ## Show only open applications in the Dock
-    defaults write com.apple.dock static-only -bool true
+    # defaults write com.apple.dock static-only -bool true
 
     ## Don’t animate opening applications from the Dock
     defaults write com.apple.dock launchanim -bool false
@@ -106,13 +127,13 @@ function configure_mac() {
     ## 10: Put display to sleep
     ## 11: Launchpad
     ## 12: Notification Center
-    ## Top left screen corner → Mission Control
+    ## Top left screen corner
     defaults write com.apple.dock wvous-tl-corner -int 0
     defaults write com.apple.dock wvous-tl-modifier -int 0
-    ## Top right screen corner → Nothing
+    ## Top right screen corner
     defaults write com.apple.dock wvous-tr-corner -int 0
     defaults write com.apple.dock wvous-tr-modifier -int 0
-    ## Bottom left screen corner → Nothing
+    ## Bottom left screen corner
     defaults write com.apple.dock wvous-bl-corner -int 0
     defaults write com.apple.dock wvous-bl-modifier -int 0
 
@@ -120,7 +141,7 @@ function configure_mac() {
 
 
     ## Save screenshots to Downloads folder
-#    defaults write com.apple.screencapture location -string "${HOME}/Downloads"
+   defaults write com.apple.screencapture location -string "${HOME}/Downloads"
 
 ## Require password immediately after sleep or screen saver begins
     # defaults write com.apple.screensaver askForPassword -int 1
@@ -157,8 +178,8 @@ function configure_mac() {
     defaults write com.apple.finder FXPreferredViewStyle -string clmv
     
     # Always show scrollbars
-    defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
     # Possible values: `WhenScrolling`, `Automatic` and `Always`
+    defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
     
     # Save to disk (not to iCloud) by default
     defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -167,14 +188,13 @@ function configure_mac() {
     defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
     
     # Disable the “Are you sure you want to open this application?” dialog
-     defaults write com.apple.LaunchServices LSQuarantine -bool false
+    #  defaults write com.apple.LaunchServices LSQuarantine -bool false
 
     # Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
     sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
     
     # Restart automatically if the computer freezes
     sudo systemsetup -setrestartfreeze on
-
 
     # Avoid creating .DS_Store files on network or USB volumes
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
