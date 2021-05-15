@@ -1,3 +1,7 @@
+# last updated: 2021-05-14
+
+# aliases
+$HOME/dev_local/github/mac-init/dot_config/.aliases
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -14,17 +18,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# run this without having to drop in the file path
-alias maintain='/Users/eric/dev_local/github/mac-init/maintain.sh'
-
-# allow xcode to open the current folder in command line
-alias xcode='open -a xcode .'
-
-# who uses python 2
-alias python='python3'
-alias py='python3'
-alias pip='pip3'
-
 # /usr/local/bin/gcc-6 not working
 export PATH="/usr/local/bin/gcc-6:$PATH"
 
@@ -35,7 +28,3 @@ export PATH="$IDF_PATH/tools:$PATH"
 # pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-# use linux ll command
-# https://unix.stackexchange.com/questions/28425/how-can-i-install-the-ll-command-on-mac-os-x
-alias ll='ls -lG'
