@@ -20,4 +20,4 @@
   st = status
   br = branch
 [init]
-	defaultBranch = master
+	defaultBranch = main
