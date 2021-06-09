@@ -28,3 +28,7 @@ export PATH="$IDF_PATH/tools:$PATH"
 # pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# set options
+# https://gist.github.com/Anon-Exploiter/4e12193df0099183d18720c6471d571a
+setopt interactivecomments # allow comments in interactive mode
