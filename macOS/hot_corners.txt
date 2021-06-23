@@ -1,8 +1,0 @@
-# upper l
-Screen Saver
-
-# lower l
-lock screen
-
-# lower r
-desktop
