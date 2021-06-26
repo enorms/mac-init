@@ -10,64 +10,47 @@
 REPO=~/github/mac-init/
 BREW_FILE_PATH="${REPO}/brew/macOS.Brewfile"
 
-
+# TODOs: use cli options for mac updates, esp XCode, and restarting
 main() {
-    get_sudo  # in advance for software update
+    get_sudo  # need for software update
     update_homebrew
-    update_cask
     update_mas
-    update_softwareupdate # Update Apple system software
+    update_pip
+    update_softwareupdate #  Apple system and apps
 }
 
 function get_sudo() {
-    info "Prompting for sudo password"
+    info "Sudo password"
     if sudo --validate; then
         # Keep-alive
         while true; do sudo --non-interactive true; \
             sleep 10; kill -0 "$$" || exit; done 2>/dev/null &
-        success "Sudo password updated"
     else
-        error "Sudo password update failed"
+        error "Fail get sudo password"
         exit 1
     fi
 }
 
 function update_homebrew() {
-    info "Homebrew update started."
-    # substep "List packages: "
-    # brew list
-    substep "Check for updates... "
-    brew update
+    info "Homebrew"
+    brew outdated
     brew upgrade --display-times
-    success "Homebrew update completed."
-}
-
-function update_cask() {
-    info "Cask update started."
-    # substep "List packages: "
-    # brew cask list
-    substep "Check for updates... "
-    brew outdated --cask
-    brew upgrade --cask
-    success "Cask update completed."
 }
 
 function update_mas() {
-    info "Mas update started."
-    # substep "List packages: "
-    # mas list
-    substep "Check for updates... "
+    info "MAS"
     mas outdated
     mas upgrade
-    success "Mas update completed."
 }
 
 function update_softwareupdate() {
-    info "Softwareupdate has started."
-    substep "Check for updates... "
-    # softwareupdate --list
+    info "Softwareupdate"
     sudo softwareupdate --install --recommended --restart #sudo needed to restart
-    success "softwareupdate completed"
+}
+
+function update_pip() {
+    info "Pip packages"
+    pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U
 }
 
 
