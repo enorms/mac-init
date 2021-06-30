@@ -1,0 +1,14 @@
+# view
+% git config --get-regexp alias      
+alias.st status
+alias.p pull
+alias.f fetch
+alias.h help
+alias.b branch
+alias.ba branch -a
+alias.com commit
+alias.ch checkout
+alias.br branch
+
+# add
+% git config --global alias.br branch  

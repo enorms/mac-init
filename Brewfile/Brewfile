@@ -141,8 +141,6 @@ cask "gnucash"
 cask "google-backup-and-sync"
 # Web browser
 cask "google-chrome"
-# Set of tools to manage resources and applications hosted on Google Cloud
-cask "google-cloud-sdk"
 # Keyboard customizer
 cask "karabiner-elements"
 # Utility for pairing devices with Unifying receivers
@@ -153,8 +151,6 @@ cask "macdown"
 cask "mactex"
 # Visual diff and merge tool
 cask "meld"
-# Meet, chat, call, and collaborate in just one place
-cask "microsoft-teams"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # VPN client for secure internet access and private browsing

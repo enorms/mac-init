@@ -31,4 +31,14 @@ eval "$(pyenv virtualenv-init -)"
 
 # set options
 # https://gist.github.com/Anon-Exploiter/4e12193df0099183d18720c6471d571a
+# https://github.com/camillobruni/script/blob/master/zshrc
+# https://scriptingosx.com/2019/06/moving-to-zsh-part-3-shell-options/
 setopt interactivecomments # allow comments in interactive mode
+bindkey ' ' magic-space                           # do history expansion on space
+bindkey '^[[1;5C' forward-word                    # ctrl + ->
+bindkey '^[[C' forward-word                       # ctrl + ->
+bindkey '^[[1;5D' backward-word                   # ctrl + <-
+bindkey '^[[D' backward-word                      # ctrl + <-
+bindkey '^[[5~' beginning-of-buffer-or-history    # page up
+bindkey '^[[6~' end-of-buffer-or-history          # page down
+bindkey '^[[Z' undo                               # shift + tab undo last action
