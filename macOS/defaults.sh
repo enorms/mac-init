@@ -7,6 +7,19 @@
 #   Check:
 #     % defaults read NSGlobalDomain AppleShowScrollBars
 #     Always
+#
+#     or 
+#     % defaults find brave |head
+#     Found 13 keys in domain 'com.brave.Browser': {
+#         LastRunAppBundlePath = "/Applications/Brave Browser.app";
+#         NSNavLastRootDirectory = "~/Downloads";
+#         NSNavLastUserSetHideExtensionButtonState = 1;
+#         NSNavPanelExpandedSizeForOpenMode = "{800, 448}";
+#         NSNavPanelExpandedSizeForSaveMode = "{800, 448}";
+#         NSNavPanelExpandedStateForSaveMode = 1;
+#         "NSWindow Frame NSNavPanelAutosaveName" = "880 745 800 388 0 0 2560 1415 ";
+#         SUAutomaticallyUpdate = 1;
+#         SUEnableAutomaticChecks = 1;
 # 
 #   Set:
 #     defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
@@ -227,22 +240,30 @@ function configure_mac() {
     # Application Specific                                                        #
     ###############################################################################
 
-    ## Google Chrome
+    ## Google Chrome & Brave
     # Disable the all too sensitive backswipe on trackpads
     defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
     defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
+    defaults write com.brave.Browser AppleEnableSwipeNavigateWithScrolls -bool false
+    defaults write com.brave.Browser.beta AppleEnableSwipeNavigateWithScrolls -bool false
 
     # Disable the all too sensitive backswipe on Magic Mouse
     defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
     defaults write com.google.Chrome.canary AppleEnableMouseSwipeNavigateWithScrolls -bool false
+    defaults write com.brave.Browser AppleEnableMouseSwipeNavigateWithScrolls -bool false
+    defaults write com.brave.Browser.beta AppleEnableMouseSwipeNavigateWithScrolls -bool false
 
     # Use the system-native print preview dialog
     defaults write com.google.Chrome DisablePrintPreview -bool true
     defaults write com.google.Chrome.canary DisablePrintPreview -bool true
+    defaults write com.brave.Browser DisablePrintPreview -bool true
+    defaults write com.brave.Browser.beta DisablePrintPreview -bool true
 
     # Expand the print dialog by default
     defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
     defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
+    defaults write com.brave.Browser PMPrintingExpandedStateForPrint2 -bool true
+    defaults write com.brave.Browser.beta PMPrintingExpandedStateForPrint2 -bool true
     
     ## SizeUp
     # Start SizeUp at login
