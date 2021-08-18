@@ -1,5 +1,5 @@
 # Usage
-# .zshrc: source $HOME/dev_local/github/mac-init/dot_config/.aliases
+# .zshrc: source $HOME/dev_local/mac-init/dot_config/.aliases
 # .bashrc: see https://askubuntu.com/a/195357 
 # 
 # Ref:
@@ -17,7 +17,7 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias xcode='open -a xcode .'
 
 # run this without having to drop in the file path
-alias maintain='/Users/eric/dev_local/github/mac-init/maintain.sh'
+alias maintain='/Users/eric/dev_local/mac-init/maintain.sh'
 
 # Unix compatability
 # use linux ll command
@@ -31,7 +31,8 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias c="tr -d '\n' | pbcopy"
 
 # Reload the shell (i.e. invoke as a login shell)
-alias reload="exec ${SHELL} -l"
+# alias reload="exec ${SHELL} -l"
+alias reload=". ~/.zshrc"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."

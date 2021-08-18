@@ -1,0 +1,12 @@
+title = "computer settings"
+
+[owner]
+name = "Eric Norman"
+
+[browser]
+app = "Chrome" # synced history, tabs; brave sync not working
+account = "norman.ej@gmail.com"
+uses = [
+  "reading on Book",
+  "following up with postings on mbp"
+]
