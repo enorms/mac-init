@@ -1,7 +1,16 @@
-# last updated: 2021-05-14
+# use repo version
+# ln -s ~/dev_local/mac-init/dot_config/.zshrc ~/.zshrc
+# last updated: 2021-09
 
 # aliases
-$HOME/dev_local/github/mac-init/dot_config/.aliases
+source $HOME/dev_local/mac-init/dot_config/.aliases
+/Users/eric/dev_local/mac-init/dot_config/.aliases
+
+# local scripts
+export PATH=$PATH":$HOME/dev_local/scripts"
+export PATH=$PATH":$HOME/dev_local/scripts/rachleff-list/src"
+export PATH=$PATH":$HOME/dev_local/scripts/rachleff-list/"
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -17,6 +26,10 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# don't use conda by default
+export PATH="/usr/local/bin/python3:$PATH"
+
 
 # /usr/local/bin/gcc-6 not working
 export PATH="/usr/local/bin/gcc-6:$PATH"
@@ -42,3 +55,20 @@ bindkey '^[[D' backward-word                      # ctrl + <-
 bindkey '^[[5~' beginning-of-buffer-or-history    # page up
 bindkey '^[[6~' end-of-buffer-or-history          # page down
 bindkey '^[[Z' undo                               # shift + tab undo last action
+
+# /usr/local/bin/gcc-6 not working
+export PATH="/usr/local/bin/gcc-6:$PATH"
+
+# Wasp-lang
+# https://wasp-lang.dev/docs#2-installation
+export PATH=$PATH:/Users/eric/.local/bin
+
+# brew doctor
+export PATH="/usr/local/sbin:$PATH"
+
+#node
+export PATH="/usr/local/bin/node:$PATH"export PATH="/usr/local/opt/node@14/bin:$PATH"
+
+# gpg, sign commits github
+GPG_TTY=$(tty)
+export GPG_TTY

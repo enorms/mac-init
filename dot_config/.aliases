@@ -7,6 +7,13 @@
 #
 # git aliases in 'git config'
 
+# Project shortcuts
+alias maintain='/Users/eric/dev_local/mac-init/maintain.sh'
+#alias rachleff='source /Users/eric/dev_local/rachleff-list/venv/bin/activate; python /Users/eric/dev_local/rachleff-list/src/main.py check ; deactivate;'
+
+# Modules
+alias rachleff-list='python -m /Users/eric/dev_local/rachleff-list/src/main.py'
+
 # who uses python 2
 alias python='python3'
 alias py='python3'
@@ -16,8 +23,7 @@ alias pip='pip3'
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias xcode='open -a xcode .'
 
-# run this without having to drop in the file path
-alias maintain='/Users/eric/dev_local/mac-init/maintain.sh'
+
 
 # Unix compatability
 # use linux ll command

@@ -1,9 +1,12 @@
+# ln -s ~/dev_local/mac-init/dot_config/.gitconfig ~/.gitconfig
 # This is Git's per-user configuration file.
 [user]
 	name = Eric Norman
 	email = eric@norman.zone
+	signingkey = C6D824C6114123D6
 [core]
 	excludesfile = /Users/eric/.gitignore_global
+	autocrlf = input
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -12,12 +15,20 @@
 	trustExitCode = true
 [commit]
 	template = /Users/eric/.stCommitMsg
+	gpgsign = true # https://harryrschwartz.com/2014/11/01/automatically-signing-your-git-commits.html
 
 # https://githowto.com/aliases
 [alias]
-  co = checkout
-  ci = commit
-  st = status
-  br = branch
+	st = status
+	p = pull
+	f = fetch
+	h = help
+	b = branch
+	ba = branch -a
+	com = commit
+	ch = checkout
+	br = branch
 [init]
 	defaultBranch = main
+[gpg]
+	program = gpg2
