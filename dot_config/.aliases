@@ -12,18 +12,18 @@ alias maintain='/Users/eric/dev_local/mac-init/maintain.sh'
 #alias rachleff='source /Users/eric/dev_local/rachleff-list/venv/bin/activate; python /Users/eric/dev_local/rachleff-list/src/main.py check ; deactivate;'
 
 # Modules
-alias rachleff-list='python -m /Users/eric/dev_local/rachleff-list/src/main.py'
+alias rachleff='python -m rachleff'
+alias rachleff-list='python -m rachleff'
 
-# who uses python 2
+# Python (3)
 alias python='python3'
 alias py='python3'
 alias pip='pip3'
+alias jn='jupyter notebook'
 
 # Applications
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias xcode='open -a xcode .'
-
-
 
 # Unix compatability
 # use linux ll command

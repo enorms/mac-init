@@ -2,6 +2,20 @@
 # ln -s ~/dev_local/mac-init/dot_config/.zshrc ~/.zshrc
 # last updated: 2021-09
 
+# set options
+# https://gist.github.com/Anon-Exploiter/4e12193df0099183d18720c6471d571a
+# https://github.com/camillobruni/script/blob/master/zshrc
+# https://scriptingosx.com/2019/06/moving-to-zsh-part-3-shell-options/
+# ctr + u: kill line
+# ctr + w: kill word
+# add 'ctr + del' by setting Teminal > Settings > Keyboard: + '\027'
+# fake_bindkey 'ctr + del' backward-kill-word
+setopt interactivecomments # allow comments in interactive mode
+bindkey ' ' magic-space                           # do history expansion on space
+bindkey '^[[1;5C' forward-word                    # opt + ->
+bindkey '^[[5~' beginning-of-buffer-or-history    # page up
+bindkey '^[[6~' end-of-buffer-or-history          # page down
+
 # aliases
 source $HOME/dev_local/mac-init/dot_config/.aliases
 /Users/eric/dev_local/mac-init/dot_config/.aliases
@@ -10,7 +24,6 @@ source $HOME/dev_local/mac-init/dot_config/.aliases
 export PATH=$PATH":$HOME/dev_local/scripts"
 export PATH=$PATH":$HOME/dev_local/scripts/rachleff-list/src"
 export PATH=$PATH":$HOME/dev_local/scripts/rachleff-list/"
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -30,7 +43,6 @@ unset __conda_setup
 # don't use conda by default
 export PATH="/usr/local/bin/python3:$PATH"
 
-
 # /usr/local/bin/gcc-6 not working
 export PATH="/usr/local/bin/gcc-6:$PATH"
 
@@ -41,20 +53,6 @@ export PATH="$IDF_PATH/tools:$PATH"
 # pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-# set options
-# https://gist.github.com/Anon-Exploiter/4e12193df0099183d18720c6471d571a
-# https://github.com/camillobruni/script/blob/master/zshrc
-# https://scriptingosx.com/2019/06/moving-to-zsh-part-3-shell-options/
-setopt interactivecomments # allow comments in interactive mode
-bindkey ' ' magic-space                           # do history expansion on space
-bindkey '^[[1;5C' forward-word                    # ctrl + ->
-bindkey '^[[C' forward-word                       # ctrl + ->
-bindkey '^[[1;5D' backward-word                   # ctrl + <-
-bindkey '^[[D' backward-word                      # ctrl + <-
-bindkey '^[[5~' beginning-of-buffer-or-history    # page up
-bindkey '^[[6~' end-of-buffer-or-history          # page down
-bindkey '^[[Z' undo                               # shift + tab undo last action
 
 # /usr/local/bin/gcc-6 not working
 export PATH="/usr/local/bin/gcc-6:$PATH"

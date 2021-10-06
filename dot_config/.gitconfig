@@ -7,6 +7,9 @@
 [core]
 	excludesfile = /Users/eric/.gitignore_global
 	autocrlf = input
+	attributesfile = /Users/eric/dev_local/mac-init/dot_config/.gitattributes
+	attributesfile = filter.dropoutput_ipynb.clean
+	attributesfile = filter.dropoutput_ipynb.smudge
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -32,3 +35,5 @@
 	defaultBranch = main
 [gpg]
 	program = gpg2
+
+# juypyter notebook strip output: https://github.com/kynan/nbstripout
