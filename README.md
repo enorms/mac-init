@@ -1,8 +1,8 @@
 # mac-init
-More than a dotfile to save preferences, a one-command full environment setup.
+Full environment with preferences and installed software for initial install and on-going sync between devices.
 
 
-## Usage
+# Usage - Initial
 
 Install XCode and accept license, via app store
 
@@ -21,15 +21,19 @@ Execute `bootstrap` function freely which in turn executes the bootstrapping scr
 
 ## Modifications after install
 
-### Update Path
+### Anaconda
 
-# Anaconda
-
+Update path
 `export PATH=/usr/local/anaconda3/bin:$PATH`
 
-# Android Tools:
+To run:
+`source /usr/local/anaconda3/bin/activate`
 
-```SHELL
+
+### Android Tools:
+
+Update path
+```sh
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -37,9 +41,10 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 
-# Lyx
+### Lyx
 
-``` SHELL
+Update path
+``` sh
 export PATH=/usr/local/texlive/2018/bin:$PATH
 export PATH=/usr/local/texlive/2018/bin/x86_64-darwin/xelatex:$PATH
 export PATH=/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
@@ -47,30 +52,33 @@ export PATH=/usr/local/texlive/2018/texmf-dist/tex/latex:$PATH
 export PATH=/usr/local/texlive/2018/texmf-dist/tex/:$PATH
 ```
 
+# Usage - Maintain
 
-### To remove unneeded applications
+## Applications
 
-If installed via brew, use brew bundle uninstall, like this:
+Save all installed:
+
+```sh
+brew bundle dump --all --describe --file=Brewfile
+
+```
+
+Check for missing applications:
+```sh
+brew bundle check -v --all --file={PATH}
+```
+
+Remove unneeded applications
+
 `brew bundle cleanup --force --file=[path]`
 
-Example:
-```
-erics-MacBook-Pro:mac-init eric$ brew bundle cleanup --force --file=/Users/eric/github/mac-init/brew/macOS.Brewfile
-==> Uninstalling Cask resilio-sync
-==> Backing App 'Resilio Sync.app' up to '/usr/local/Caskroom/resilio-sync/2.6.3/Resilio Sync.app'.
-==> Removing App '/Applications/Resilio Sync.app'.
-==> Purging files for version 2.6.3 of Cask resilio-sync
-Uninstalled 1 cask
-Pruned 1 symbolic links and 2 directories from /usr/local
+Check for outdated and upgrade:
+```sh
+brew outdated
+brew upgrade
 ```
 
-
-## Usage notes
-
-* Anaconda
-To run:
-`source /usr/local/anaconda3/bin/activate`
-
+# Extra
 
 ## TODO
 store basic dotfiles

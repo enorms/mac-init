@@ -5,7 +5,11 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
+tap "homebrew/services"
+tap "mongodb/brew"
 tap "vitorgalvao/tiny-scripts"
+# Image manipulation library
+brew "jpeg"
 # Arduino command-line interface
 brew "arduino-cli"
 # Automatic configure script builder
@@ -16,16 +20,22 @@ brew "bazaar"
 brew "boost"
 # Portable Foreign Function Interface library
 brew "libffi"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Manage compile and link flags for libraries
 brew "pkg-config"
+# Tool Command Language
+brew "tcl-tk"
 # Object-file caching compiler wrapper
 brew "ccache"
+# Statistics utility to count lines of code
+brew "cloc"
 # Cross-platform make
 brew "cmake"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
-# Image manipulation library
-brew "jpeg"
+# USB programmer
+brew "dfu-util"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Visually compare two PDF files
@@ -42,6 +52,8 @@ brew "gcc@6"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Graph visualization software from AT&T and Bell Labs
@@ -74,10 +86,10 @@ brew "ninja"
 brew "nmap"
 # Platform built on V8 to build network applications
 brew "node"
+# Generate clients, server & docs from an OpenAPI spec (v2, v3)
+brew "openapi-generator"
 # Development kit for the Java programming language
 brew "openjdk@8"
-# Securely redacting and stripping metadata
-brew "pdf-redact-tools"
 # Port of pdftk in java
 brew "pdftk-java"
 # Python version management
@@ -86,8 +98,6 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 # Python interface to Tcl/Tk
 brew "python-tk@3.9"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
 # Tools for creating native apps for Android and iOS
@@ -110,7 +120,8 @@ brew "wget"
 brew "yarn"
 # Quickly repair outdated/broken Casks from homebrew-cask
 brew "vitorgalvao/tiny-scripts/cask-repair"
-cask "1password6"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
 # JDK from the Java User Group (JUG)
 cask "adoptopenjdk"
 # Distribution of the Python and R programming languages for scientific computing
@@ -119,10 +130,16 @@ cask "anaconda"
 cask "arduino"
 # Multi-cloud backup application
 cask "arq"
+# Experimental peer-to-peer web browser
+cask "beaker-browser"
+# Desktop password and login vault
+cask "bitwarden"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Tool to remove unnecessary files and folders from disk
 cask "cleanmymac"
+# Free app that makes your Internet safer
+cask "cloudflare-warp"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerized applications and microservices
@@ -137,10 +154,11 @@ cask "geekbench"
 cask "gemini"
 # Double-entry accounting program
 cask "gnucash"
-# Back up and sync files with Google Drive
 cask "google-backup-and-sync"
 # Web browser
 cask "google-chrome"
+# Menu bar application for the IPFS peer-to-peer network
+cask "ipfs"
 # Keyboard customizer
 cask "karabiner-elements"
 # Utility for pairing devices with Unifying receivers
@@ -151,10 +169,10 @@ cask "macdown"
 cask "mactex"
 # Visual diff and merge tool
 cask "meld"
+# VPN client
+cask "mullvadvpn"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-# VPN client for secure internet access and private browsing
-cask "nordvpn"
 # Real-time strategy game engine for Westwood games
 cask "openra"
 # Monitors computer mic and webcam
@@ -165,6 +183,10 @@ cask "postman"
 cask "quicken"
 # Environment for statistical computing and graphics
 cask "r"
+# Imaging utility to install operating systems to a microSD card
+cask "raspberry-pi-imager"
+# Data science software focusing on R and Python
+cask "rstudio"
 # Instant messaging application focusing on security
 cask "signal"
 # Utility to resize and position application windows
@@ -203,6 +225,7 @@ mas "Be Focused Pro", id: 961632517
 mas "BlueSee", id: 1336679524
 mas "Brother iPrint&Scan", id: 1193539993
 mas "Gapplin", id: 768053424
+mas "GoodNotes", id: 1444383602
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "LG Screen Manager", id: 1142051783
