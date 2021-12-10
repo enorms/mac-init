@@ -1,0 +1,109 @@
+{
+  "title": "OpenRA Multi-Click",
+  "rules": [
+    {
+      "description": "OpenRA Multi-Click (MX Master)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button5"
+          },
+          "to": [
+            {
+              "pointing_button": "button1"
+            },
+            {
+              "pointing_button": "button1"
+            },            
+            {
+              "pointing_button": "button1"
+            },            
+            {
+              "pointing_button": "button1"
+            },            
+            {
+              "pointing_button": "button1"
+            }         
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button4"
+          },
+          "to": [
+            {
+              "pointing_button": "button1"
+            },
+            {
+              "pointing_button": "button1"
+            },            
+            {
+              "pointing_button": "button1"
+            },            
+            {
+              "pointing_button": "button1"
+            },
+            {
+              "pointing_button": "button1"
+            },
+            {
+              "pointing_button": "button1"
+            },            
+            {
+              "pointing_button": "button1"
+            },            
+            {
+              "pointing_button": "button1"
+            },            
+            {
+              "pointing_button": "button1"
+            },                  
+            {
+              "pointing_button": "button1"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button3"
+          },
+          "to": [
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            },            
+            {
+              "pointing_button": "button2"
+            },            
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            },            
+            {
+              "pointing_button": "button2"
+            },            
+            {
+              "pointing_button": "button2"
+            },            
+            {
+              "pointing_button": "button2"
+            },                  
+            {
+              "pointing_button": "button2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

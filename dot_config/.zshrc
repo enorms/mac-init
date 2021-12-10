@@ -50,7 +50,8 @@ export PATH="/usr/local/bin/gcc-6:$PATH"
 export IDF_PATH=/Users/eric/dev_local/github/product_jump/bridge/esp/esp-idf
 export PATH="$IDF_PATH/tools:$PATH"
 
-# pyenv
+# 
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -70,3 +71,6 @@ export PATH="/usr/local/bin/node:$PATH"export PATH="/usr/local/opt/node@14/bin:$
 # gpg, sign commits github
 GPG_TTY=$(tty)
 export GPG_TTY
+
+# ensure shell looks in current dir for commands
+export PATH=".:$PATH"
