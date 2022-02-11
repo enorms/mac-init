@@ -63,9 +63,9 @@ brew "hwloc"
 # Install and debug iPhone apps from the command-line
 brew "ios-deploy"
 # Peer-to-peer hypermedia protocol
-brew "ipfs"
+brew "ipfs", link: false
 # Interactive computing in Python
-brew "ipython"
+brew "ipython", link: false
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # GNOME XML library
@@ -102,6 +102,8 @@ brew "python-tk@3.9"
 brew "qpdf"
 # Tools for creating native apps for Android and iOS
 brew "react-native-cli"
+# Persistent key-value database, with built-in net interface
+brew "redis", restart_service: true
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
 # Rust toolchain installer
@@ -130,10 +132,6 @@ cask "anaconda"
 cask "arduino"
 # Multi-cloud backup application
 cask "arq"
-# Experimental peer-to-peer web browser
-cask "beaker-browser"
-# Desktop password and login vault
-cask "bitwarden"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Tool to remove unnecessary files and folders from disk
@@ -148,21 +146,26 @@ cask "docker"
 cask "dropbox"
 # Tool for using an iPad as a second display
 cask "duet"
+# Bitcoin thin client
+cask "electrum"
 # Tool to measure the computer system's performance
 cask "geekbench"
 # Disk space cleaner that finds and deletes duplicated and similar files
 cask "gemini"
 # Double-entry accounting program
 cask "gnucash"
-cask "google-backup-and-sync"
 # Web browser
 cask "google-chrome"
+# Client for the Google Drive storage service
+cask "google-drive"
 # Menu bar application for the IPFS peer-to-peer network
 cask "ipfs"
 # Keyboard customizer
 cask "karabiner-elements"
 # Utility for pairing devices with Unifying receivers
 cask "logitech-unifying"
+# Screen and video recording software
+cask "loom"
 # Open-source Markdown editor
 cask "macdown"
 # Full TeX Live distribution with GUI applications
@@ -175,18 +178,12 @@ cask "mullvadvpn"
 cask "ngrok"
 # Real-time strategy game engine for Westwood games
 cask "openra"
-# Monitors computer mic and webcam
-cask "oversight"
 # Collaboration platform for API development
 cask "postman"
-# Personal finance mananger
+# Personal finance manager
 cask "quicken"
 # Environment for statistical computing and graphics
 cask "r"
-# Imaging utility to install operating systems to a microSD card
-cask "raspberry-pi-imager"
-# Data science software focusing on R and Python
-cask "rstudio"
 # Instant messaging application focusing on security
 cask "signal"
 # Utility to resize and position application windows
@@ -203,13 +200,15 @@ cask "steam"
 cask "sublime-text"
 # Remote access and connectivity software focused on security
 cask "teamviewer"
+# Messaging app with a focus on speed and security
+cask "telegram"
 # Trading software
 cask "trader-workstation"
 # Control your data usage on slow or expensive networks
 cask "tripmode"
 # Development environment
 cask "vagrant"
-# Free and open-source hosted hypervisor for x86 virtualization
+# Virtualizer for x86 hardware
 cask "virtualbox"
 # Open-source code editor
 cask "visual-studio-code"
@@ -224,6 +223,7 @@ cask "zoom"
 mas "Be Focused Pro", id: 961632517
 mas "BlueSee", id: 1336679524
 mas "Brother iPrint&Scan", id: 1193539993
+mas "Daily", id: 686910553
 mas "Gapplin", id: 768053424
 mas "GoodNotes", id: 1444383602
 mas "Keynote", id: 409183694

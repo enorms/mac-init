@@ -18,7 +18,8 @@ bindkey '^[[6~' end-of-buffer-or-history          # page down
 
 # aliases
 source $HOME/dev_local/mac-init/dot_config/.aliases
-/Users/eric/dev_local/mac-init/dot_config/.aliases
+source $HOME/dev_local/mac-init/dot_config/functions/*
+
 
 # local scripts
 export PATH=$PATH":$HOME/dev_local/scripts"
@@ -74,3 +75,10 @@ export GPG_TTY
 
 # ensure shell looks in current dir for commands
 export PATH=".:$PATH"
+
+# Python versions
+## pyenv
+eval "$(pyenv init -)"
+PATH=$(pyenv root)/shims:$PATH
+## homebrew
+# export PATH="/usr/local/opt/python@3.10/bin:$PATH"

@@ -7,9 +7,20 @@
 #
 # git aliases in 'git config'
 
+# Classes
+# CS 160B
+alias zck='/Users/eric/sync_gd/documents/Education/CCSF_2019/2021.2_Fall/CS_160B/scripts/zck'
+alias shebang='echo "#!/usr/bin/bash"' # $ shebang > newshellscript
+# TODO: auto populate file name; try function [here], with alias points that that only
+#  % echo "$(basename -- /Users/eric/sync_gd/documents/Education/CCSF_2019/2021.2_Fall/CS_160B/8/lab/mkstyle)"
+# mkstyle
+alias cmbk='echo -e "#!/usr/bin/bash\n# Name: Eric Norman\n# File: $1 \n# Date: "$(date "+%Y-%m-%d")"\n# Desc: \n# Usage: "' # $ cmblock > newshellscript
+alias ckargs='echo -e "\n# Must be 1 argument\nif [ $# -ne 1 ]; then echo "Usage: script arg1"; exit; fi"'
+
 # Project shortcuts
 alias maintain='/Users/eric/dev_local/mac-init/maintain.sh'
 #alias rachleff='source /Users/eric/dev_local/rachleff-list/venv/bin/activate; python /Users/eric/dev_local/rachleff-list/src/main.py check ; deactivate;'
+
 
 # Modules
 alias rachleff='python -m rachleff'
@@ -25,8 +36,9 @@ alias jn='jupyter notebook'
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias xcode='open -a xcode .'
 
-# Unix compatability
-# use linux ll command
+# Linux shortcuts
+alias la='ls -a'
+# Compatibilipy
 # https://unix.stackexchange.com/questions/28425/how-can-i-install-the-ll-command-on-mac-os-x
 alias ll='ls -lG'
 
@@ -35,6 +47,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
+alias clean=" {echo $*}"
 
 # Reload the shell (i.e. invoke as a login shell)
 # alias reload="exec ${SHELL} -l"
@@ -77,4 +90,12 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# Dates
+# https://phoenixnap.com/kb/linux-date-command
+alias dd='date +"%Y-%m-%d_%H-%M-%S"; date +"%Y-%m-%d_%H"; date +"%Y-%m-%d"'
+# >>> from datetime import datetime as dt # avoid namespace collision
+# >>> dt.fromisoformat('2021-12-21T02_42'.replace('_', ':')
+# datetime.datetime(2021, 12, 21, 2, 42)
+alias dp='date +"%Y-%m-%dT%H_%M_%S"; date +"%Y-%m-%dT%H:%M:%S"; date +"%Y-%m-%dT%H"; date +"%Y-%m-%dT%H" | pbcopy'  
 
