@@ -9,7 +9,7 @@
 
 # Classes
 # CS 160B
-alias zck='/Users/eric/sync_gd/documents/Education/CCSF_2019/2021.2_Fall/CS_160B/scripts/zck'
+alias zck="$HOME/sync_gd/documents/Education/CCSF_2019/2021.2_Fall/CS_160B/scripts/zck"
 alias shebang='echo "#!/usr/bin/bash"' # $ shebang > newshellscript
 # TODO: auto populate file name; try function [here], with alias points that that only
 #  % echo "$(basename -- /Users/eric/sync_gd/documents/Education/CCSF_2019/2021.2_Fall/CS_160B/8/lab/mkstyle)"
@@ -18,7 +18,7 @@ alias cmbk='echo -e "#!/usr/bin/bash\n# Name: Eric Norman\n# File: $1 \n# Date: 
 alias ckargs='echo -e "\n# Must be 1 argument\nif [ $# -ne 1 ]; then echo "Usage: script arg1"; exit; fi"'
 
 # Project shortcuts
-alias maintain='/Users/eric/dev_local/mac-init/maintain.sh'
+alias maintain="$HOME/dev_local/mac-init/maintain.sh"
 #alias rachleff='source /Users/eric/dev_local/rachleff-list/venv/bin/activate; python /Users/eric/dev_local/rachleff-list/src/main.py check ; deactivate;'
 
 
@@ -98,4 +98,3 @@ alias dd='date +"%Y-%m-%d_%H-%M-%S"; date +"%Y-%m-%d_%H"; date +"%Y-%m-%d"'
 # >>> dt.fromisoformat('2021-12-21T02_42'.replace('_', ':')
 # datetime.datetime(2021, 12, 21, 2, 42)
 alias dp='date +"%Y-%m-%dT%H_%M_%S"; date +"%Y-%m-%dT%H:%M:%S"; date +"%Y-%m-%dT%H"; date +"%Y-%m-%dT%H" | pbcopy'  
-
