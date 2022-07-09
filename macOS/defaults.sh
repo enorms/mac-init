@@ -117,8 +117,8 @@ function configure_mac() {
     ## Don’t show recent applications in Dock
     # defaults write com.apple.dock show-recents -bool false
 
-    ## Set the icon size of Dock items to 36 pixels
-    defaults write com.apple.dock tilesize -int 36
+    ## Set a smaller icon size of Dock items
+    defaults write com.apple.dock tilesize -int 40
 
     ## Remove all (default) app icons from the Dock
     # defaults write com.apple.dock persistent-apps -array

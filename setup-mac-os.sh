@@ -264,7 +264,7 @@ function setup_macOS_defaults() {
 
     current_dir=$(pwd)
     cd ${REPO}/macOS
-    if bash macos.sh; then
+    if bash defaults.sh; then
         cd $current_dir
         success "macOS defaults updated successfully"
     else

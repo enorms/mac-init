@@ -20,11 +20,13 @@ alias ckargs='echo -e "\n# Must be 1 argument\nif [ $# -ne 1 ]; then echo "Usage
 # Project shortcuts
 alias maintain="$HOME/dev_local/mac-init/maintain.sh"
 #alias rachleff='source /Users/eric/dev_local/rachleff-list/venv/bin/activate; python /Users/eric/dev_local/rachleff-list/src/main.py check ; deactivate;'
+alias stretch="python /Users/eric/dev_local/physical-therapy/src/main.py run --stretch --clear"
 
 
 # Modules
-alias rachleff='python -m rachleff'
-alias rachleff-list='python -m rachleff'
+# alias rachleff='python -m rachleff'
+# alias rachleff-list='python -m rachleff'
+alias stretch='python -m stretch'
 
 # Python (3)
 alias python='python3'

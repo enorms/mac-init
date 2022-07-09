@@ -9,9 +9,13 @@ Install XCode and accept license, via app store
 Install XCode CLT
 `xcode-select --install`
 
+Download latest setup file and run.
 ```SHELL
 curl --silent https://raw.githubusercontent.com/lifekaizen/mac-init/master/setup-mac-os.sh | bash
 ```
+
+Link gitconfig.
+`ln -s ~/dev_local/mac-init/dot_config/.gitconfig ~/.gitconfig`
 
 * Enter license information of purchased applications.
 * Manually set [un-automatable shortcuts](https://github.com/Sajjadhosn/dotfiles/blob/master/shortcuts/shortcuts.md#un-automatable-shortcuts)

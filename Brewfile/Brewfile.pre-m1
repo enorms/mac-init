@@ -1,0 +1,239 @@
+tap "hashicorp/tap"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "mongodb/brew"
+tap "vitorgalvao/tiny-scripts"
+# Image manipulation library
+brew "jpeg"
+# Arduino command-line interface
+brew "arduino-cli"
+# Automatic configure script builder
+brew "autoconf"
+# Friendly powerful distributed version control system
+brew "bazaar"
+# Collection of portable C++ source libraries
+brew "boost"
+# Portable Foreign Function Interface library
+brew "libffi"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# Tool Command Language
+brew "tcl-tk"
+# Object-file caching compiler wrapper
+brew "ccache"
+# Statistics utility to count lines of code
+brew "cloc"
+# Cross-platform make
+brew "cmake"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# USB programmer
+brew "dfu-util"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Visually compare two PDF files
+brew "diff-pdf"
+# Isolated development environments using Docker
+brew "docker-compose"
+# ESP8266 and ESP32 serial bootloader utility
+brew "esptool"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
+# GNU compiler collection
+brew "gcc@6"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Portable abstraction of the hierarchical topology of modern architectures
+brew "hwloc"
+# Install and debug iPhone apps from the command-line
+brew "ios-deploy"
+# Peer-to-peer hypermedia protocol
+brew "ipfs", link: false
+# Interactive computing in Python
+brew "ipython", link: false
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# GNOME XML library
+brew "libxml2"
+# C XSLT library for GNOME
+brew "libxslt"
+# Utility for directing compilation
+brew "make"
+# Mac App Store command-line interface
+brew "mas"
+# Cross platform, open source .NET development framework
+brew "mono"
+# Open source relational database management system
+brew "mysql"
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Port scanning utility for large networks
+brew "nmap"
+# Platform built on V8 to build network applications
+brew "node"
+# Generate clients, server & docs from an OpenAPI spec (v2, v3)
+brew "openapi-generator"
+# Development kit for the Java programming language
+brew "openjdk@8"
+# Port of pdftk in java
+brew "pdftk-java"
+# Python version management
+brew "pyenv"
+# Pyenv plugin to manage virtualenv
+brew "pyenv-virtualenv"
+# Python interface to Tcl/Tk
+brew "python-tk@3.9"
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"
+# Tools for creating native apps for Android and iOS
+brew "react-native-cli"
+# Persistent key-value database, with built-in net interface
+brew "redis", restart_service: true
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Rust toolchain installer
+brew "rustup-init"
+# Text interface for Git repositories
+brew "tig"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# C++ Library Manager
+brew "vcpkg"
+# Watch files and take action when they change
+brew "watchman"
+# Internet file retriever
+brew "wget"
+# JavaScript package manager
+brew "yarn"
+# Quickly repair outdated/broken Casks from homebrew-cask
+brew "vitorgalvao/tiny-scripts/cask-repair"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# JDK from the Java User Group (JUG)
+cask "adoptopenjdk"
+# Distribution of the Python and R programming languages for scientific computing
+cask "anaconda"
+# Electronics prototyping platform
+cask "arduino"
+# Multi-cloud backup application
+cask "arq"
+# Web browser focusing on privacy
+cask "brave-browser"
+# Tool to remove unnecessary files and folders from disk
+cask "cleanmymac"
+# Free app that makes your Internet safer
+cask "cloudflare-warp"
+# Voice and text chat software
+cask "discord"
+# App to build and share containerized applications and microservices
+cask "docker"
+# Client for the Dropbox cloud storage service
+cask "dropbox"
+# Tool for using an iPad as a second display
+cask "duet"
+# Bitcoin thin client
+cask "electrum"
+# Tool to measure the computer system's performance
+cask "geekbench"
+# Disk space cleaner that finds and deletes duplicated and similar files
+cask "gemini"
+# Double-entry accounting program
+cask "gnucash"
+# Web browser
+cask "google-chrome"
+# Client for the Google Drive storage service
+cask "google-drive"
+# Menu bar application for the IPFS peer-to-peer network
+cask "ipfs"
+# Keyboard customizer
+cask "karabiner-elements"
+# Utility for pairing devices with Unifying receivers
+cask "logitech-unifying"
+# Screen and video recording software
+cask "loom"
+# Open-source Markdown editor
+cask "macdown"
+# Full TeX Live distribution with GUI applications
+cask "mactex"
+# Visual diff and merge tool
+cask "meld"
+# VPN client
+cask "mullvadvpn"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# Real-time strategy game engine for Westwood games
+cask "openra"
+# Collaboration platform for API development
+cask "postman"
+# Personal finance manager
+cask "quicken"
+# Environment for statistical computing and graphics
+cask "r"
+# Instant messaging application focusing on security
+cask "signal"
+# Utility to resize and position application windows
+cask "sizeup"
+# Digital design and prototyping platform
+cask "sketch"
+# Video chat, voice call and instant messaging application
+cask "skype"
+# Graphical client for Git version control
+cask "sourcetree"
+# Video game digital distribution service
+cask "steam"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# Remote access and connectivity software focused on security
+cask "teamviewer"
+# Messaging app with a focus on speed and security
+cask "telegram"
+# Trading software
+cask "trader-workstation"
+# Control your data usage on slow or expensive networks
+cask "tripmode"
+# Development environment
+cask "vagrant"
+# Virtualizer for x86 hardware
+cask "virtualbox"
+# Open-source code editor
+cask "visual-studio-code"
+# Desktop client for WhatsApp
+cask "whatsapp"
+# Network protocol analyzer
+cask "wireshark"
+# Open-source version of the X.Org X Window System
+cask "xquartz"
+# Video communication and virtual meeting platform
+cask "zoom"
+mas "Be Focused Pro", id: 961632517
+mas "BlueSee", id: 1336679524
+mas "Brother iPrint&Scan", id: 1193539993
+mas "Daily", id: 686910553
+mas "Gapplin", id: 768053424
+mas "GoodNotes", id: 1444383602
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+mas "LG Screen Manager", id: 1142051783
+mas "Notability", id: 360593530
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "ScreenBrush", id: 1233965871
+mas "Slack", id: 803453959
+mas "The Unarchiver", id: 425424353
+mas "WiFi Explorer", id: 494803304
+mas "Xcode", id: 497799835

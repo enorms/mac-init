@@ -18,7 +18,7 @@
 	trustExitCode = true
 [commit]
 	template = /Users/eric/.stCommitMsg
-	gpgsign = true # https://harryrschwartz.com/2014/11/01/automatically-signing-your-git-commits.html
+	gpgsign = false
 
 # https://githowto.com/aliases
 [alias]
@@ -31,6 +31,7 @@
 	com = commit
 	ch = checkout
 	br = branch
+	ph = push heroku main
 [init]
 	defaultBranch = main
 [gpg]
