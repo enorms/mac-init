@@ -4,7 +4,7 @@
 ## Maintain Brewfile
 
 # Export Brewfile with descriptions (overwrites with --force)
-brew bundle dump --describe
+brew bundle dump --force [--describe]
 
 
 ## Usage Commands
