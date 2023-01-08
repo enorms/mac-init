@@ -16,10 +16,16 @@ bindkey '^[[1;5C' forward-word                    # opt + ->
 bindkey '^[[5~' beginning-of-buffer-or-history    # page up
 bindkey '^[[6~' end-of-buffer-or-history          # page down
 
+# shortcuts
+# https://www.tutorialkart.com/bash-shell-scripting/bash-date-format-options-examples/
+alias d="date +%F" # 2023-01-07
+alias D="date '+%F %T %Z'" # 2023-01-07 16:24:56 PST
+alias e="date '+%Y-%j %A'"
+alias E="date '+%j'" # Day of year (001..366); 007
+
 # aliases
 source $HOME/dev_local/mac-init/dot_config/.aliases
 source $HOME/dev_local/mac-init/dot_config/functions/*
-
 
 # local scripts
 export PATH=$PATH":$HOME/dev_local/scripts"
