@@ -221,7 +221,8 @@ function configure_mac() {
     defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
     # Show the ~/Library folder
-    chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+    # No such xattr: com.apple.FinderInfo
+#    chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 
     # Expand save panel by default
     defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
