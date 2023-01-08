@@ -38,3 +38,7 @@
 	program = gpg2
 
 # juypyter notebook strip output: https://github.com/kynan/nbstripout
+[push]
+	autoSetupRemote = true
+[pull]
+	ff = only
