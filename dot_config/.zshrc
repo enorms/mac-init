@@ -1,6 +1,5 @@
-# use repo version
+# run to switch config files to repo
 # ln -s ~/dev_local/mac-init/dot_config/.zshrc ~/.zshrc
-# last updated: 2021-09
 
 # set options
 # https://gist.github.com/Anon-Exploiter/4e12193df0099183d18720c6471d571a
