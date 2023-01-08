@@ -57,11 +57,6 @@ export PATH="/usr/local/bin/gcc-6:$PATH"
 export IDF_PATH=/Users/eric/dev_local/github/product_jump/bridge/esp/esp-idf
 export PATH="$IDF_PATH/tools:$PATH"
 
-# 
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 # /usr/local/bin/gcc-6 not working
 export PATH="/usr/local/bin/gcc-6:$PATH"
 
@@ -69,11 +64,15 @@ export PATH="/usr/local/bin/gcc-6:$PATH"
 # https://wasp-lang.dev/docs#2-installation
 export PATH=$PATH:/Users/eric/.local/bin
 
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # brew doctor
 export PATH="/usr/local/sbin:$PATH"
 
 #node
-export PATH="/usr/local/bin/node:$PATH"export PATH="/usr/local/opt/node@14/bin:$PATH"
+export PATH="/usr/local/bin/node:$PATH"export 
+PATH="/usr/local/opt/node@14/bin:$PATH"
+PATH="/usr/local/opt/node@16/bin:$PATH"
 
 # gpg, sign commits github
 GPG_TTY=$(tty)
@@ -84,7 +83,12 @@ export PATH=".:$PATH"
 
 # Python versions
 ## pyenv
-eval "$(pyenv init -)"
-PATH=$(pyenv root)/shims:$PATH
+# eval "$(pyenv init -)"
+# PATH=$(pyenv root)/shims:$PATH
+# # 
+# export PATH="$HOME/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 ## homebrew
 # export PATH="/usr/local/opt/python@3.10/bin:$PATH"
+
