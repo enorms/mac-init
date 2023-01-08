@@ -1,0 +1,206 @@
+{
+  "title": "OpenRA shortcuts on default keys",
+  "rules": [
+    {
+      "description": "Open RA build 5 (\"5\"); shift escapes",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "5"
+          },
+          "to": [
+            {
+              "pointing_button": "button1"
+            },
+            {
+              "pointing_button": "button1"
+            },
+            {
+              "pointing_button": "button1"
+            },
+            {
+              "pointing_button": "button1"
+            },
+            {
+              "pointing_button": "button1"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "5",
+            "modifiers": {
+              "mandatory": ["left_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "5"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "5",
+            "modifiers": {
+              "mandatory": ["right_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Open RA cancel 5 (\"1\"); shift escapes",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1"
+          },
+          "to": [
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": {
+              "mandatory": ["left_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "1"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": {
+              "mandatory": ["right_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Open RA cancel 5 (\"caps_lock\"); shift escapes",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock"
+          },
+          "to": [
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            },
+            {
+              "pointing_button": "button2"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "mandatory": ["left_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "caps_lock"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "mandatory": ["right_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Open RA allow volume change",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f11",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "volume_decrement"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f12",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "volume_increment"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "title": "Better use minimally used keys",
+  "rules": [
+    {
+      "description": "CapsLock Deletes, Cmd+CapsLock Deletes Forward",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "caps_lock"
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "mandatory": ["left_command"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_forward"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "mandatory": ["right_command"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_forward"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "CapsLock is Forward Delete",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "caps_lock"
+          },
+          "to": [
+            {
+              "key_code": "delete_forward"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
