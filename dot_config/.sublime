@@ -1,0 +1,16 @@
+# this does not work because
+
+% sudo ln -s "~/dev_local/mac-init/dot_config/Default (OSX).sublime-keymap" "~/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap"
+ln: ~/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap: No such file or directory
+
+even with the files existing
+~/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap
+~/dev_local/mac-init/dot_config/Default (OSX).sublime-keymap
+
+# run to switch config files to repo
+
+# requires sudo
+
+sudo ln -s "~/dev_local/mac-init/dot_config/Default (OSX).sublime-keymap" "~/Library/Application Support/Sublime Text/Packages/User/Default (OSX).sublime-keymap"
+
+/Users/e/dev_local/mac-init/dot_config/Default (OSX).sublime-keymap

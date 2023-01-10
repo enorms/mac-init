@@ -1,6 +1,6 @@
 # mac-init
-Full environment with preferences and installed software for initial install and on-going sync between devices.
 
+Full environment with preferences and installed software for initial install and on-going sync between devices.
 
 # Usage - Initial
 
@@ -10,6 +10,7 @@ Install XCode CLT
 `xcode-select --install`
 
 Download latest setup file and run.
+
 ```SHELL
 curl --silent https://raw.githubusercontent.com/lifekaizen/mac-init/master/setup-mac-os.sh | bash
 ```
@@ -17,11 +18,10 @@ curl --silent https://raw.githubusercontent.com/lifekaizen/mac-init/master/setup
 Link gitconfig.
 `ln -s ~/dev_local/mac-init/dot_config/.gitconfig ~/.gitconfig`
 
-* Enter license information of purchased applications.
-* Manually set [un-automatable shortcuts](https://github.com/Sajjadhosn/dotfiles/blob/master/shortcuts/shortcuts.md#un-automatable-shortcuts)
+- Enter license information of purchased applications.
+- Manually set [un-automatable shortcuts](https://github.com/Sajjadhosn/dotfiles/blob/master/shortcuts/shortcuts.md#un-automatable-shortcuts)
 
 Execute `bootstrap` function freely which in turn executes the bootstrapping script.
-
 
 ## Modifications after install
 
@@ -33,10 +33,10 @@ Update path
 To run:
 `source /usr/local/anaconda3/bin/activate`
 
-
 ### Android Tools:
 
 Update path
+
 ```sh
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -48,7 +48,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ### Lyx
 
 Update path
-``` sh
+
+```sh
 export PATH=/usr/local/texlive/2018/bin:$PATH
 export PATH=/usr/local/texlive/2018/bin/x86_64-darwin/xelatex:$PATH
 export PATH=/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
@@ -68,6 +69,7 @@ brew bundle dump --all --describe --file=Brewfile
 ```
 
 Check for missing applications:
+
 ```sh
 brew bundle check -v --all --file={PATH}
 ```
@@ -77,6 +79,7 @@ Remove unneeded applications
 `brew bundle cleanup --force --file=[path]`
 
 Check for outdated and upgrade:
+
 ```sh
 brew outdated
 brew upgrade
@@ -85,15 +88,13 @@ brew upgrade
 # Extra
 
 ## TODO
+
 store basic dotfiles
 
 choose brew and cask install applications and dev environments
 
-
 Check missing packages: `brew list --cask`
 May need to be in dir with Brewfile
-
-
 
 ## Reference
 
@@ -102,3 +103,7 @@ May need to be in dir with Brewfile
 [corresponding repo](https://github.com/Sajjadhosn/dotfiles/)
 
 [flush out decision space](https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
+
+# TODO: link ~/.config/karabiner/assets/\*
+
+# TODO .gitconfig > signingkey
