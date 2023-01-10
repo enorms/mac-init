@@ -15,12 +15,22 @@ bindkey '^[[1;5C' forward-word                    # opt + ->
 bindkey '^[[5~' beginning-of-buffer-or-history    # page up
 bindkey '^[[6~' end-of-buffer-or-history          # page down
 
+# constants
+grn="$(tput setaf 2)"
+resettextcolor="$(tput sgr0)" # not needed as color makes new line and resets
+didcopymsg='👆 copied to clipboard 📋 ✅ 🐶'
+
 # shortcuts
-# https://www.tutorialkart.com/bash-shell-scripting/bash-date-format-options-examples/
-alias d="date +%F" # 2023-01-07
-alias D="date '+%F %T %Z'" # 2023-01-07 16:24:56 PST
-alias e="date '+%Y-%j %A'"
-alias E="date '+%j'" # Day of year (001..366); 007
+alias green=echo "$(tput setaf 2)" # todo: add ability to take in text at end of command
+alias copy="tr -d '\n' | pbcopy" # strip trailing newline
+alias d='echo "$(date '\''+%F'\'')" | tee /tmp/output.txt; cat /tmp/output.txt | copy; rm /tmp/output.txt; echo "$grn $didcopymsg"'
+# 2023-01-07
+alias D='echo "$(date '\''+%F %T %Z'\'')" | tee /tmp/output.txt; cat /tmp/output.txt | copy; rm /tmp/output.txt; echo "$grn $didcopymsg"'
+# 2023-01-07 20:59:49 PST
+alias e='echo "$(date '\''+%Y-%j'\'')" | tee /tmp/output.txt; cat /tmp/output.txt | copy; rm /tmp/output.txt; echo "$grn $didcopymsg"'
+# 2023-009
+alias E='echo "$(date '\''+%Y-%j %A'\'')" | tee /tmp/output.txt; cat /tmp/output.txt | copy; rm /tmp/output.txt; echo "$grn $didcopymsg"'
+# 2023-007 Saturday
 
 # aliases
 source $HOME/dev_local/mac-init/dot_config/.aliases
