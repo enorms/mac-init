@@ -82,6 +82,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin/node:$PATH"export 
 PATH="/usr/local/opt/node@14/bin:$PATH"
 PATH="/usr/local/opt/node@16/bin:$PATH"
+PATH="/usr/local/opt/node@18/bin:$PATH"
 
 # gpg, sign commits github
 GPG_TTY=$(tty)
@@ -101,3 +102,11 @@ export PATH=".:$PATH"
 ## homebrew
 # export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 
+
+# bun completions
+[ -s "/Users/e/.bun/_bun" ] && source "/Users/e/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
