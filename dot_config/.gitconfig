@@ -42,3 +42,8 @@
 	autoSetupRemote = true
 [pull]
 	ff = only
+[filter "nbstripout"]
+	clean = \"/Users/e/dev_local/pioneer/portfolio_modeling/venv/bin/python\" -m nbstripout
+	smudge = cat
+[diff "ipynb"]
+	textconv = \"/Users/e/dev_local/pioneer/portfolio_modeling/venv/bin/python\" -m nbstripout -t
