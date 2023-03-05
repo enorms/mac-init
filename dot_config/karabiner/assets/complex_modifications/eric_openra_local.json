@@ -201,6 +201,77 @@
           ]
         }
       ]
+    },
+    {
+      "description": "Pedals for mouse clicks",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a"
+          },
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 6790,
+                  "product_id": 57382
+                }
+              ]
+            }
+          ],
+          "to": [
+            {
+              "pointing_button": "button1"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c"
+          },
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 6790,
+                  "product_id": 57382
+                }
+              ]
+            }
+          ],
+          "to": [
+            {
+              "pointing_button": "button2"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b"
+          },
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 6790,
+                  "product_id": 57382
+                }
+              ]
+            }
+          ],
+          "to": [
+            {
+              "pointing_button": "button2"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
