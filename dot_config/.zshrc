@@ -23,14 +23,14 @@ didcopymsg='👆 copied to clipboard 📋 ✅ 🐶'
 # shortcuts
 alias green=echo "$(tput setaf 2)" # todo: add ability to take in text at end of command
 alias copy="tr -d '\n' | pbcopy" # strip trailing newline
-alias d='echo "$(date '\''+%F'\'')" | tee /tmp/output.txt; cat /tmp/output.txt | copy; rm /tmp/output.txt; echo "$grn $didcopymsg"'
-# 2023-01-07
-alias D='echo "$(date '\''+%F %T %Z'\'')" | tee /tmp/output.txt; cat /tmp/output.txt | copy; rm /tmp/output.txt; echo "$grn $didcopymsg"'
-# 2023-01-07 20:59:49 PST
-alias e='echo "$(date '\''+%Y-%j'\'')" | tee /tmp/output.txt; cat /tmp/output.txt | copy; rm /tmp/output.txt; echo "$grn $didcopymsg"'
-# 2023-009
-alias E='echo "$(date '\''+%Y-%j %A'\'')" | tee /tmp/output.txt; cat /tmp/output.txt | copy; rm /tmp/output.txt; echo "$grn $didcopymsg"'
-# 2023-007 Saturday
+alias d='echo -n "$(date +%F)" | pbcopy; echo "$grn $didcopymsg"'
+# 2023-04-07
+alias D='echo -n "$(date "+%F, %A %B%e, %X %Z")" | pbcopy; echo "$grn $didcopymsg"'
+# 2023-04-07, Friday April 7, 11:51:21 PDT
+alias e='echo -n "$(date '+%Y-%j')" | pbcopy; echo "$grn $didcopymsg"'
+# 2023-097
+alias E='echo -n "$(date '+%Y-%j %F %A')" | pbcopy; echo "$grn $didcopymsg"'
+# 2023-097 2023-04-07 Friday
 
 # aliases
 source $HOME/dev_local/mac-init/dot_config/.aliases
