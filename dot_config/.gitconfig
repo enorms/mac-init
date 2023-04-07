@@ -5,7 +5,7 @@
 	email = eric@norman.zone
 	signingkey = C6D824C6114123D6
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/e/.gitignore_global
 	autocrlf = input
 	attributesfile = /Users/eric/dev_local/mac-init/dot_config/.gitattributes
 	attributesfile = filter.dropoutput_ipynb.clean
