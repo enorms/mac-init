@@ -19,22 +19,12 @@ export PATH=/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
 # above didn't work for jekyll (ghp instructions), trying this from jekyll site
 export PATH=/usr/local/bin:$PATH
 
-# allow xcode to open the current folder in command line
-alias xcode='open -a xcode .'
-
-# who uses python 2
-alias python='python3'
-alias py='python3'
-alias pip='pip3'
-
-
 # use brewfile in git repo # default is ~/.config/brewfile/Brewfile
 export HOMEBREW_BREWFILE=~/dev_local/github/mac-init/homebrew/.Brewfile
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_INSTALL_BADGE=⛷✨
 
-# run this without having to drop in the file path
-alias maintain='/Users/eric/dev_local/github/mac-init/maintain.sh'
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"

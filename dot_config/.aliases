@@ -20,13 +20,17 @@ alias ckargs='echo -e "\n# Must be 1 argument\nif [ $# -ne 1 ]; then echo "Usage
 # Project shortcuts
 alias maintain="$HOME/dev_local/mac-init/maintain.sh"
 #alias rachleff='source /Users/eric/dev_local/rachleff-list/venv/bin/activate; python /Users/eric/dev_local/rachleff-list/src/main.py check ; deactivate;'
-alias stretch="python /Users/eric/dev_local/physical-therapy/src/main.py run --stretch --clear"
+alias stretch="python /Users/eric/dev_local/physical-therapy/src/main.py run --clear"
 
+# Allow alias by loading module
+export PATH=$PATH":$HOME/dev_local/scripts"
+export PATH=$PATH":$HOME/dev_local/scripts/rachleff-list/src"
+export PATH=$PATH":$HOME/dev_local/scripts/rachleff-list/"
+export PATH=$PATH":$HOME/dev_local/github/physical-therapy"
 
 # Modules
-# alias rachleff='python -m rachleff'
-# alias rachleff-list='python -m rachleff'
-alias stretch='python -m stretch'
+alias maintain='$HOME/dev_local/mac-init/maintain.sh'
+alias stretch='python $HOME/dev_local/physical-therapy/src/main.py run'
 
 # Python (3)
 alias python='python3'
@@ -95,8 +99,19 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 
 # Dates
 # https://phoenixnap.com/kb/linux-date-command
+grn="$(tput setaf 2)"
+resettextcolor="$(tput sgr0)" # not needed as color makes new line and resets
+didcopymsg='👆 copied to clipboard 📋 ✅ 🐶'
+alias green=echo "$(tput setaf 2)" # todo: add ability to take in text at end of command
+
 alias dd='date +"%Y-%m-%d_%H-%M-%S"; date +"%Y-%m-%d_%H"; date +"%Y-%m-%d"'
 # >>> from datetime import datetime as dt # avoid namespace collision
 # >>> dt.fromisoformat('2021-12-21T02_42'.replace('_', ':')
 # datetime.datetime(2021, 12, 21, 2, 42)
 alias dp='date +"%Y-%m-%dT%H_%M_%S"; date +"%Y-%m-%dT%H:%M:%S"; date +"%Y-%m-%dT%H"; date +"%Y-%m-%dT%H" | pbcopy'  
+
+alias copy="tr -d '\n' | pbcopy" # strip trailing newline
+alias d='echo -n "$(date +%F)" | pbcopy; echo "$grn $didcopymsg"'
+# 2023-04-07
+alias D='echo -n "$(date "+%Y-%j, %B %e, %A, %X %Z")" | pbcopy; echo "$grn $didcopymsg"'
+# 2023-120, Sunday April 30, 20:42:00 PDT

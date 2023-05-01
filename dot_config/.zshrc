@@ -15,23 +15,6 @@ bindkey '^[[1;5C' forward-word                    # opt + ->
 bindkey '^[[5~' beginning-of-buffer-or-history    # page up
 bindkey '^[[6~' end-of-buffer-or-history          # page down
 
-# constants
-grn="$(tput setaf 2)"
-resettextcolor="$(tput sgr0)" # not needed as color makes new line and resets
-didcopymsg='👆 copied to clipboard 📋 ✅ 🐶'
-
-# shortcuts
-alias green=echo "$(tput setaf 2)" # todo: add ability to take in text at end of command
-alias copy="tr -d '\n' | pbcopy" # strip trailing newline
-alias d='echo -n "$(date +%F)" | pbcopy; echo "$grn $didcopymsg"'
-# 2023-04-07
-alias D='echo -n "$(date "+%F, %A %B%e, %X %Z")" | pbcopy; echo "$grn $didcopymsg"'
-# 2023-04-07, Friday April 7, 11:51:21 PDT
-alias e='echo -n "$(date '+%Y-%j')" | pbcopy; echo "$grn $didcopymsg"'
-# 2023-097
-alias E='echo -n "$(date '+%Y-%j %F %A')" | pbcopy; echo "$grn $didcopymsg"'
-# 2023-097 2023-04-07 Friday
-
 # aliases
 source $HOME/dev_local/mac-init/dot_config/.aliases
 source $HOME/dev_local/mac-init/dot_config/functions/*
@@ -40,6 +23,7 @@ source $HOME/dev_local/mac-init/dot_config/functions/*
 export PATH=$PATH":$HOME/dev_local/scripts"
 export PATH=$PATH":$HOME/dev_local/scripts/rachleff-list/src"
 export PATH=$PATH":$HOME/dev_local/scripts/rachleff-list/"
+export PATH=$PATH":$HOME/dev_local/mac-init/"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
