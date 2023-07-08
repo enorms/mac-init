@@ -50,7 +50,8 @@ function update_softwareupdate() {
 
 function update_pip() {
     info "Pip packages"
-    pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U
+    python3 -m pip install --upgrade pip
+    pip3 list --outdated | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U
 }
 
 
