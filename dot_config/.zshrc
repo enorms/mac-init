@@ -68,6 +68,10 @@ PATH="/usr/local/opt/node@14/bin:$PATH"
 PATH="/usr/local/opt/node@16/bin:$PATH"
 PATH="/usr/local/opt/node@18/bin:$PATH"
 
+# ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+
 # gpg, sign commits github
 GPG_TTY=$(tty)
 export GPG_TTY
