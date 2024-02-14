@@ -37,6 +37,9 @@ alias python='python3'
 alias py='python3'
 alias pip='pip3'
 alias jn='jupyter notebook'
+# poetry new with gitignore
+alias poetrynew='f(){ poetry new $1 && cd $1 && curl -O https://raw.githubusercontent.com/python-poetry/poetry/master/.gitignore; unset -f f; }; f'
+
 
 # Applications
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
