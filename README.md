@@ -25,6 +25,16 @@ Execute `bootstrap` function freely which in turn executes the bootstrapping scr
 
 ## Modifications after install
 
+### Use version controlled files
+
+```sh
+% ln -s <path_to>/mac-init/dot_config/.zshrc ~/.zshrc
+
+# check
+% ls -l ~/.zshrc
+# lrwxr-xr-x  1 <user>  staff  45 <date> /Users/<user>/.zshrc -> /Users/<user>/<path>/mac-init/dot_config/.zshrc
+```
+
 ### Anaconda
 
 Update path
